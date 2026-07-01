@@ -11,13 +11,11 @@ A bright, happy heirloom recipe book for Noor and Yahya Khan, and for all the ge
 
 The cookbook is organized into colored sections, each with its own divider tab. Sections are created automatically as recipes are added.
 
-### Biryani
-- Hyderabadi Chicken Dum Biryani — *from the kitchen of Noor*
-
 ### Breads & Bakes
-- Blueberry Bran Breakfast Muffins — *from the kitchen of Yahya*
+- Munshi Naan — *from the kitchen of Yahya*
+- Everyday Loaf — *from the kitchen of Yahya*
 
-*(This list grows as recipes are added. The current file is a design sample.)*
+*(This list grows as recipes are added.)*
 
 ## How it's made
 
@@ -47,4 +45,3 @@ The design spec is fully self-contained in `SKILL.md`, so the cookbook looks the
 | `khan-family-cookbook.pdf` | Print-ready PDF for the binder |
 | `skills/khan-family-cookbook/SKILL.md` | The reusable skill |
 | `khan-family-cookbook.skill` | The skill, zipped for one-click install |
-| `khan-cookbook-sample.html` / `.pdf` | The approved design sample |

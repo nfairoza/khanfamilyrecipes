@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Khan Family Cookbook — Sample</title>
+<title>The Khan Family Cookbook</title>
 <style>
 :root{
   color-scheme: light;
@@ -23,7 +23,7 @@
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;background:#cfc8ba;}
 body{font-family:"Georgia","Times New Roman",serif;color:var(--ink);-webkit-font-smoothing:antialiased;}
-.page{width:8.5in;min-height:11in;background:var(--paper);margin:24px auto;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.18);padding:0.7in 0.7in 0.7in 1.15in;}
+.page{width:8.5in;min-height:11in;background:var(--paper);margin:24px auto;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.18);padding:0.7in 0.7in 0.9in 1.15in;}
 .holes{position:absolute;left:0.42in;top:0;bottom:0;width:18px;display:flex;flex-direction:column;justify-content:space-around;align-items:center;padding:1.4in 0;z-index:5;}
 .holes span{width:15px;height:15px;border-radius:50%;background:#efe8d8;box-shadow:inset 0 1px 2px rgba(0,0,0,.18);}
 h1,h2,h3{font-family:"Georgia",serif;margin:0;}
@@ -51,16 +51,21 @@ h1,h2,h3{font-family:"Georgia",serif;margin:0;}
 .banner h2{font-size:36px;line-height:1.05;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.12);}
 .banner .yield{font-family:Helvetica,Arial,sans-serif;font-size:13px;color:rgba(255,255,255,.95);margin-top:6px;letter-spacing:.03em;}
 .cat-chip{font-family:Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;background:#fff;color:var(--accent);font-weight:800;padding:6px 13px;border-radius:20px;white-space:nowrap;margin-top:6px;}
-.hero{position:relative;height:2.9in;border-radius:16px;margin-bottom:18px;overflow:hidden;background:linear-gradient(135deg,#ffd23f,#ff5a4d 55%,#13c4c4);display:flex;align-items:center;justify-content:center;border:6px solid #fff;box-shadow:0 8px 22px rgba(0,0,0,.16);}
+.intro{font-size:15px;line-height:1.55;color:var(--soft-ink);margin-bottom:16px;font-style:italic;}
+.hero{position:relative;height:2.6in;border-radius:16px;margin-bottom:18px;overflow:hidden;background:linear-gradient(135deg,#ffd23f,#ff5a4d 55%,#13c4c4);display:flex;align-items:center;justify-content:center;border:6px solid #fff;box-shadow:0 8px 22px rgba(0,0,0,.16);}
 .hero .ph-emoji{font-size:108px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.22));}
 .hero .ph-note{position:absolute;bottom:10px;right:14px;font-family:Helvetica,Arial,sans-serif;font-size:11px;color:#fff;background:rgba(0,0,0,.3);padding:4px 10px;border-radius:12px;}
 .cols{display:grid;grid-template-columns:1.05fr 1.55fr;gap:24px;}
 .ingredients{background:var(--accent-soft);border-radius:14px;padding:16px 18px;}
 .ingredients h3,.method h3{font-family:Helvetica,Arial,sans-serif;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
 .ingredients ul{list-style:none;margin:0;padding:0;}
-.ingredients li{padding:6px 0;border-bottom:1px dashed var(--line);font-size:15px;line-height:1.35;}
+.ingredients li{padding:6px 0;border-bottom:1px dashed var(--line);font-size:15px;line-height:1.35;display:flex;justify-content:space-between;gap:10px;}
 .ingredients li:last-child{border-bottom:none;}
 .ingredients li b{color:var(--ink);}
+.ingredients li .amt{color:var(--accent);font-weight:700;white-space:nowrap;}
+.ing-foot{margin-top:10px;padding-top:8px;border-top:2px solid var(--accent);font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--ink);display:flex;justify-content:space-between;font-weight:800;}
+.spec{font-family:Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.06em;color:var(--soft-ink);margin-top:10px;line-height:1.5;}
+.spec b{color:var(--accent);}
 .method ol{margin:0;padding-left:18px;}
 .method li{font-size:15px;line-height:1.6;margin-bottom:12px;}
 .method li::marker{color:var(--accent);font-weight:700;}
@@ -69,21 +74,6 @@ h1,h2,h3{font-family:"Georgia",serif;margin:0;}
 .sig{position:absolute;bottom:0.5in;right:0.75in;font-style:italic;color:var(--soft-ink);font-size:15px;}
 .sig b{font-family:"Brush Script MT","Segoe Script",cursive;font-style:normal;font-size:23px;color:var(--accent);font-weight:400;}
 .folio{position:absolute;bottom:0.45in;left:1.15in;font-family:Helvetica,Arial,sans-serif;font-size:11px;color:var(--soft-ink);letter-spacing:.1em;}
-.collage-title{text-align:center;margin-bottom:6px;}
-.collage-title h3{font-size:32px;color:var(--accent);}
-.collage-title span{font-style:italic;color:var(--soft-ink);font-size:15px;}
-.collage{position:relative;height:8.4in;margin-top:8px;}
-.polaroid{position:absolute;background:#fff;padding:11px 11px 36px;border-radius:3px;box-shadow:0 9px 20px rgba(0,0,0,.2);}
-.polaroid .pic{border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:56px;}
-.polaroid .cap{position:absolute;bottom:9px;left:0;right:0;text-align:center;font-family:"Bradley Hand","Segoe Print","Comic Sans MS",cursive;font-size:13px;color:var(--soft-ink);}
-.tape{position:absolute;width:78px;height:26px;top:-11px;left:50%;transform:translateX(-50%) rotate(-4deg);box-shadow:0 1px 2px rgba(0,0,0,.1);}
-/* full-page photo */
-.fullphoto{padding:0;}
-.fullphoto .fp-img{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:240px;}
-.fullphoto .fp-caption{position:absolute;left:0;right:0;bottom:0;padding:0.7in 0.7in 0.6in 1.15in;color:#fff;background:linear-gradient(to top, rgba(0,0,0,.62), rgba(0,0,0,0));}
-.fullphoto .fp-caption h3{font-size:38px;margin-bottom:6px;text-shadow:0 1px 3px rgba(0,0,0,.4);}
-.fullphoto .fp-caption p{font-style:italic;font-size:17px;margin:0;color:rgba(255,255,255,.95);}
-.fullphoto .fp-note{position:absolute;top:16px;right:16px;font-family:Helvetica,Arial,sans-serif;font-size:11px;color:#fff;background:rgba(0,0,0,.32);padding:5px 11px;border-radius:12px;}
 @media print{@page{size:Letter;margin:0;}body{background:#fff;}.page{margin:0;box-shadow:none;page-break-after:always;width:8.5in;min-height:11in;-webkit-print-color-adjust:exact;print-color-adjust:exact;}.holes{display:none;}}
 </style>
 </head>
@@ -102,121 +92,11 @@ h1,h2,h3{font-family:"Georgia",serif;margin:0;}
   </div>
   <div class="cover-art">
     <div class="cover-plate"></div>
-    <div class="cover-emoji">🍲</div>
+    <div class="cover-emoji">🍞</div>
   </div>
   <div>
     <div class="est">A collection by</div>
     <div class="names">Noor &amp; Yahya Khan</div>
-  </div>
-</section>
-
-<section class="page divider" style="--accent:#ff7a00;--accent-2:#ffc233;--accent-soft:#fff1d8;">
-  <div class="holes"><span></span><span></span><span></span></div>
-  <div class="tab">Biryani</div>
-  <div class="inner">
-    <div class="big-emoji">🍚</div>
-    <h2>Biryani</h2>
-    <div class="rule"></div>
-    <div class="blurb">The heart of every celebration. Layered, fragrant, and never quite the same twice. Some are Noor's, some are Yahya's, all are ours.</div>
-  </div>
-</section>
-
-<section class="page" style="--accent:#ff7a00;--accent-2:#ffc233;--accent-soft:#fff1d8;--line:#ffd99a;">
-  <div class="holes"><span></span><span></span><span></span></div>
-  <div class="banner">
-    <div class="recipe-title">
-      <h2>Hyderabadi Chicken Dum Biryani</h2>
-      <div class="yield">Serves a hungry family of 6 · A whole afternoon, the good kind</div>
-    </div>
-    <div class="cat-chip">Biryani</div>
-  </div>
-  <div class="hero">
-    <div class="ph-emoji">🍛</div>
-    <div class="ph-note">your hero photo goes here</div>
-  </div>
-  <div class="cols">
-    <div class="ingredients">
-      <h3>What you'll need</h3>
-      <ul>
-        <li><b>Chicken</b>, a good amount, bone-in is tastier</li>
-        <li><b>Basmati rice</b>, enough to feel generous</li>
-        <li><b>Yogurt</b>, a few big spoons</li>
-        <li><b>Onions</b>, sliced thin, fried golden and sweet</li>
-        <li><b>Ginger &amp; garlic</b>, a heaping spoon, fresh ground</li>
-        <li>Green chilies to your family's bravery</li>
-        <li>A handful each of <b>mint</b> and <b>coriander</b></li>
-        <li>Whole spices, the ones that smell like home</li>
-        <li>Saffron in warm milk, just a pinch</li>
-        <li>Ghee, don't be shy</li>
-      </ul>
-    </div>
-    <div class="method">
-      <h3>How we make it</h3>
-      <ol>
-        <li>Marinate the chicken in yogurt, the fried onions, ginger garlic, chilies and herbs. Let it sit and get happy, an hour at least, longer if you can wait.</li>
-        <li>Parboil the rice with whole spices until it is just shy of done. It should still have a little bite, it finishes later.</li>
-        <li>Layer it up. Chicken on the bottom, rice over the top, then the saffron milk, fried onions, herbs and ghee scattered like you mean it.</li>
-        <li>Seal the pot and cook on low <i>dum</i> until the kitchen smells unbearable in the best way. You will know.</li>
-        <li>Rest it before you open. Fold gently so the layers stay proud.</li>
-      </ol>
-      <div class="note"><b>Amma's note:</b> she never measured a thing, and neither do I. Taste as you go, trust your hands, and add a little extra ghee for whoever you love most.</div>
-    </div>
-  </div>
-  <div class="sig">from the kitchen of <b>Noor</b></div>
-  <div class="folio">The Khan Family Cookbook · Biryani</div>
-</section>
-
-<section class="page" style="--accent:#ff7a00;--accent-soft:#fff1d8;">
-  <div class="holes"><span></span><span></span><span></span></div>
-  <div class="collage-title">
-    <h3>Biryani Day</h3>
-    <span>the mess, the layers, the people who showed up to eat</span>
-  </div>
-  <div class="collage">
-    <div class="polaroid" style="width:2.7in;left:0.1in;top:0.2in;transform:rotate(-5deg);">
-      <span class="tape" style="background:rgba(255,180,0,.6);"></span>
-      <div class="pic" style="height:2.0in;background:linear-gradient(135deg,#ffd23f,#ff8f3f);">🧅</div>
-      <div class="cap">golden onions, the secret</div>
-    </div>
-    <div class="polaroid" style="width:2.1in;right:0.2in;top:0.0in;transform:rotate(4deg);">
-      <span class="tape" style="background:rgba(19,196,196,.55);"></span>
-      <div class="pic" style="height:2.4in;background:linear-gradient(135deg,#7ef0e6,#13c4c4);">🌿</div>
-      <div class="cap">fresh mint pile</div>
-    </div>
-    <div class="polaroid" style="width:3.0in;left:1.6in;top:2.5in;transform:rotate(2deg);">
-      <span class="tape" style="background:rgba(255,90,77,.5);"></span>
-      <div class="pic" style="height:2.2in;background:linear-gradient(135deg,#ffd23f,#ff5a4d);">🍛</div>
-      <div class="cap">the big reveal</div>
-    </div>
-    <div class="polaroid" style="width:2.2in;left:0.0in;top:3.7in;transform:rotate(6deg);">
-      <span class="tape" style="background:rgba(95,194,59,.5);"></span>
-      <div class="pic" style="height:1.7in;background:linear-gradient(135deg,#c4f59e,#5fc23b);">👨‍👩‍👧</div>
-      <div class="cap">everyone waiting</div>
-    </div>
-    <div class="polaroid" style="width:2.4in;right:0.1in;top:3.3in;transform:rotate(-6deg);">
-      <span class="tape" style="background:rgba(255,126,182,.5);"></span>
-      <div class="pic" style="height:2.6in;background:linear-gradient(135deg,#ffb400,#ff7a00);">🥘</div>
-      <div class="cap">layering the dum</div>
-    </div>
-    <div class="polaroid" style="width:2.6in;left:0.7in;top:5.95in;transform:rotate(-3deg);">
-      <span class="tape" style="background:rgba(255,90,77,.5);"></span>
-      <div class="pic" style="height:1.8in;background:linear-gradient(135deg,#ff8f7e,#ff5a4d);">🍽️</div>
-      <div class="cap">empty plates = success</div>
-    </div>
-    <div class="polaroid" style="width:2.3in;right:0.4in;top:6.05in;transform:rotate(5deg);">
-      <span class="tape" style="background:rgba(255,180,0,.55);"></span>
-      <div class="pic" style="height:2.0in;background:linear-gradient(135deg,#9bece6,#13c4c4);">☕</div>
-      <div class="cap">chai after, always</div>
-    </div>
-  </div>
-</section>
-
-<section class="page fullphoto" style="background:linear-gradient(135deg,#ffb400,#ff5a4d 55%,#ff7a00);">
-  <div class="fp-img">🍛</div>
-  <div class="fp-note">your full-page photo goes here</div>
-  <div class="fp-caption">
-    <h3>The first plate, always Yahya's</h3>
-    <p>Eid 2025 — the year we doubled the recipe and still ran out</p>
   </div>
 </section>
 
@@ -235,15 +115,95 @@ h1,h2,h3{font-family:"Georgia",serif;margin:0;}
   <div class="holes"><span></span><span></span><span></span></div>
   <div class="banner">
     <div class="recipe-title">
-      <h2>Blueberry Bran Breakfast Muffins</h2>
-      <div class="yield">Makes 12 muffins · Prep 15 min · Bake 18 min · Oven 375°F (190°C)</div>
+      <h2>Munshi Naan</h2>
+      <div class="yield">Makes 4 naan · Mix 15 min · Rise 60–90 min · Cook 2–3 min each</div>
     </div>
     <div class="cat-chip">Breads</div>
   </div>
+  <div class="intro">A soft, pillowy yeasted naan enriched with yogurt and ghee. Weighed, not guessed — measured to the gram so it comes out the same every time. The yogurt keeps the crumb tender; the ghee gives it that glossy, restaurant-style finish.</div>
   <div class="hero" style="background:linear-gradient(135deg,#6ee0d6,#0aa6a6 55%,#ffd23f);">
-    <div class="ph-emoji">🧁</div>
+    <div class="ph-emoji">🫓</div>
     <div class="ph-note">your hero photo goes here</div>
   </div>
   <div class="cols">
     <div class="ingredients">
-      <h3>Ingredients</h3
+      <h3>Ingredients · scaled for 4</h3>
+      <ul>
+        <li><b>All-Purpose Flour</b><span class="amt">240 g</span></li>
+        <li><b>Active Dry Yeast (Khamir)</b><span class="amt">3 g</span></li>
+        <li><b>Sugar</b><span class="amt">4 g</span></li>
+        <li><b>Warm Milk (or water)</b><span class="amt">120 g</span></li>
+        <li><b>Salt</b><span class="amt">4.5 g</span></li>
+        <li><b>Plain Yogurt</b><span class="amt">30 g</span></li>
+        <li><b>Ghee (or melted butter)</b><span class="amt">14 g</span></li>
+      </ul>
+      <div class="spec">Milk warm, <b>not hot</b> — ~105°F (40°C). Hotter than 115°F (46°C) kills the yeast.</div>
+    </div>
+    <div class="method">
+      <h3>Method</h3>
+      <ol>
+        <li><b>Bloom the yeast.</b> Stir the yeast and sugar into the warm milk (120 g, ~105°F / 40°C). Let it stand 5–10 min until foamy. No foam means dead yeast — start over.</li>
+        <li><b>Mix the dough.</b> In a bowl combine the flour (240 g) and salt (4.5 g). Add the yogurt (30 g), ghee (14 g) and the yeast milk. Mix to a shaggy dough.</li>
+        <li><b>Knead.</b> Knead 8–10 min by hand (or 5 min in a stand mixer on medium) until smooth, soft and slightly tacky — no less. It should spring back when pressed.</li>
+        <li><b>First rise.</b> Cover and rest in a warm spot 60–90 min, until doubled in size.</li>
+        <li><b>Divide &amp; shape.</b> Knock back, divide into 4 equal pieces (~102 g each). Ball them, cover, and rest 10 min so the gluten relaxes.</li>
+        <li><b>Roll.</b> Roll or stretch each into a teardrop ~8 in long and ~1/4 in thick.</li>
+        <li><b>Cook hot.</b> Cook on a screaming-hot cast-iron skillet or tava, 2–3 min total — flip once big bubbles form and the underside is charred in spots.</li>
+        <li><b>Finish.</b> Brush with extra ghee straight off the heat. Keep wrapped in a towel until serving so they stay soft.</li>
+      </ol>
+      <div class="note"><b>Yahya's note:</b> weigh everything. The yogurt is not optional — it is what makes the crumb tender instead of bready. If the dough fights the roll, let it rest another 5 min; relaxed gluten rolls thin without tearing.</div>
+    </div>
+  </div>
+  <div class="sig">from the kitchen of <b>Yahya</b></div>
+  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes</div>
+</section>
+
+<section class="page" style="--accent:#0aa6a6;--accent-2:#6ee0d6;--accent-soft:#e2fbf8;--line:#bdeee9;">
+  <div class="holes"><span></span><span></span><span></span></div>
+  <div class="banner">
+    <div class="recipe-title">
+      <h2>Everyday Loaf</h2>
+      <div class="yield">1 standard loaf · 64% hydration · Mix 20 min · Rise 2 hrs · Bake 30–35 min · Oven 375°F (190°C)</div>
+    </div>
+    <div class="cat-chip">Breads</div>
+  </div>
+  <div class="intro">A versatile, easily handled white loaf built on a baker's formula — 64% hydration, the dough that does everything. Soft enough for sandwiches, sturdy enough to shape free-form. The percentages are by weight of flour, so you can scale it up or down and it stays true.</div>
+  <div class="hero" style="background:linear-gradient(135deg,#6ee0d6,#0aa6a6 55%,#ffd23f);">
+    <div class="ph-emoji">🍞</div>
+    <div class="ph-note">your hero photo goes here</div>
+  </div>
+  <div class="cols">
+    <div class="ingredients">
+      <h3>Formula · 1 loaf</h3>
+      <ul>
+        <li><b>Flour</b> <span style="color:var(--soft-ink);font-size:12px;">(AP or bread)</span><span class="amt">375 g · 100%</span></li>
+        <li><b>Water</b> <span style="color:var(--soft-ink);font-size:12px;">(warm)</span><span class="amt">240 g · 64%</span></li>
+        <li><b>Butter or Oil</b><span class="amt">14 g · 3.7%</span></li>
+        <li><b>Sugar (or Honey)</b><span class="amt">12 g · 3.2%</span></li>
+        <li><b>Salt</b><span class="amt">9 g · 2.4%</span></li>
+        <li><b>Active Dry Yeast</b><span class="amt">7 g · 1.9%</span></li>
+      </ul>
+      <div class="ing-foot"><span>Total Dough Mass</span><span>657 g · 175.2%</span></div>
+      <div class="spec"><b>Hydration</b> = water ÷ flour × 100 = 64%. Aim for a final dough temp (DDT) of <b>76–78°F (24–26°C)</b> — adjust water temp to hit it.</div>
+    </div>
+    <div class="method">
+      <h3>Method</h3>
+      <ol>
+        <li><b>Bloom the yeast.</b> Stir the yeast (7 g) and sugar (12 g) into the warm water (240 g). Rest 5–10 min until foamy.</li>
+        <li><b>Mix.</b> Combine the flour (375 g) and salt (9 g). Add the yeast water and the butter or oil (14 g). Mix to a rough, shaggy dough.</li>
+        <li><b>Knead.</b> Knead 10 min by hand (or 6–7 min in a stand mixer on medium) until smooth and elastic. The dough should pass a windowpane test — stretch thin without tearing.</li>
+        <li><b>Bulk rise.</b> Cover and ferment ~1 hr at warm room temperature, until doubled.</li>
+        <li><b>Shape.</b> Gently degas, shape into a tight loaf, and place seam-side down in a greased 9×5 in pan (or shape free-form on a tray).</li>
+        <li><b>Proof.</b> Cover and proof 45–60 min, until the dough crowns ~1 in above the rim and springs back slowly when poked.</li>
+        <li><b>Bake.</b> Bake at 375°F (190°C) for 30–35 min, until deep golden and the internal temperature reads <b>200–205°F (93–96°C)</b>.</li>
+        <li><b>Cool.</b> Turn out and cool on a rack at least 1 hr before slicing — cutting hot bread gums the crumb.</li>
+      </ol>
+      <div class="note"><b>Yahya's note:</b> the loaf is done when the thermometer says so, not when the timer rings. 64% hydration is forgiving — wetter for a more open crumb, drier for tidy sandwich slices, but weigh it either way.</div>
+    </div>
+  </div>
+  <div class="sig">from the kitchen of <b>Yahya</b></div>
+  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes</div>
+</section>
+
+</body>
+</html>
