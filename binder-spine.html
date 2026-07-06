@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Khan Family Cookbook — Binder Spine (1")</title>
+<style>
+:root{
+  --ink:#241f1a;
+  --coral:#ff5a4d;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:#cfc8ba;}
+body{font-family:"Georgia","Times New Roman",serif;color:var(--ink);-webkit-font-smoothing:antialiased;}
+.page{width:8.5in;height:11in;background:#fff;margin:24px auto;position:relative;box-shadow:0 10px 30px rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;}
+
+/* the printable spine strip: 1in wide x 11in tall */
+.spine-wrap{position:relative;width:1in;height:11in;}
+.cut{position:absolute;inset:0;border:1px dashed #b9b2a4;pointer-events:none;z-index:6;}
+.cut-label{position:absolute;top:-0.28in;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:Helvetica,Arial,sans-serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#b9b2a4;}
+
+.spine{position:absolute;inset:0;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 6%, rgba(255,180,0,.55), transparent 22%),
+    radial-gradient(circle at 50% 32%, rgba(255,90,77,.5), transparent 22%),
+    radial-gradient(circle at 50% 58%, rgba(19,196,196,.5), transparent 22%),
+    radial-gradient(circle at 50% 84%, rgba(95,194,59,.5), transparent 22%),
+    linear-gradient(180deg,#fff7e8,#ffeede);
+  display:flex;align-items:center;justify-content:center;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+
+/* rainbow top & bottom caps */
+.cap{position:absolute;left:0;right:0;height:0.34in;background:conic-gradient(from 90deg,#ffb400,#ff5a4d,#ff7eb6,#13c4c4,#5fc23b,#ffd23f,#ffb400);}
+.cap.top{top:0;}
+.cap.bot{bottom:0;}
+
+/* little plate dot near the top */
+.dot{position:absolute;top:0.55in;left:50%;transform:translateX(-50%);width:0.6in;height:0.6in;border-radius:50%;background:conic-gradient(from 0deg,#ffb400,#ff5a4d,#ff7eb6,#13c4c4,#5fc23b,#ffd23f,#ffb400);box-shadow:0 3px 8px rgba(0,0,0,.2);}
+.dot::after{content:"";position:absolute;inset:6px;border-radius:50%;background:#fff;}
+.dot .emoji{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:22px;}
+
+/* vertical title, reads bottom-to-top */
+.title{writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;line-height:1;}
+.title .main{font-size:34px;font-weight:700;color:var(--ink);letter-spacing:.01em;}
+.title .amp{color:var(--coral);font-style:italic;}
+.title .sub{display:block;margin-top:10px;font-family:Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#b85a12;font-weight:700;}
+
+/* names near bottom */
+.names{position:absolute;bottom:0.6in;left:50%;transform:translate(-50%,0) rotate(180deg);writing-mode:vertical-rl;font-style:italic;font-size:13px;color:var(--ink);white-space:nowrap;}
+
+@media print{
+  @page{size:Letter;margin:0;}
+  body{background:#fff;}
+  .page{margin:0;box-shadow:none;width:8.5in;height:11in;}
+  .cut,.cut-label{display:none;}
+}
+</style>
+</head>
+<body>
+<section class="page">
+  <div class="spine-wrap">
+    <div class="cut"></div>
+    <div class="cut-label">cut along dashes · 1&quot; binder spine</div>
+    <div class="spine">
+      <div class="cap top"></div>
+      <div class="dot"><div class="emoji">🍞</div></div>
+      <div class="title">
+        <span class="main">The Khan Family <span class="amp">&amp;</span> Cookbook</span>
+        <span class="sub">recipes &amp; memories</span>
+      </div>
+      <div class="names">Noor &amp; Yahya Khan</div>
+      <div class="cap bot"></div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
