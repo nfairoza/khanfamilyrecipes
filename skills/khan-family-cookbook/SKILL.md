@@ -17,9 +17,11 @@ This skill encodes an APPROVED design. Match it exactly. Do not drift toward mut
 2. **Auto-categorize, then show and confirm.** Decide each recipe's section from its title + ingredients. Print a short list like "Chicken Dum Biryani -> Biryani; Mutton Salan -> Salans" and let the user override any with one word before building. Create new categories on the fly when needed and assign each a palette color (see below).
 3. **Write in the right voice** (see Voices).
 4. **Lay out photos** using one or more of the three layouts (hero, polaroid collage, full-page). Auto-draft captions from filename + nearby recipe context; the user edits the ones they care about.
-5. **Generate HTML**, then render to **PDF** with WeasyPrint.
+5. **Generate HTML**, then render to **PDF**.
 6. **Save both** to the output folder and present with links.
 7. **Update the README** table of contents.
+
+**Per-recipe deliverables (default):** When the user adds a NEW recipe, produce a **standalone PDF for just that recipe** (its own `recipe-<name>.html` + `.pdf`), not a rebuild of the whole book. The user prints one recipe at a time and files it into a physical 1-inch 3-ring binder. Use the same design spec so it drops in seamlessly. Still update `index.html` (the combined live GitHub Pages site) and the README TOC, but the thing you hand over for printing is the single-recipe PDF. A recipe may span multiple pages — that's fine.
 8. **Offer GitHub publish** steps (prepare files + give push commands; do not assume credentials).
 
 ## Design spec (APPROVED — "Fresh & sunny", brightened)
@@ -72,11 +74,11 @@ Auto-draft a caption for every photo from its filename and the nearby recipe/ste
 - Keep the HTML **self-contained** (inline CSS, embed photos as base64 or reference local files kept alongside).
 
 ### Rendering the PDF
-Use WeasyPrint (Chromium/Playwright downloads are often blocked in sandboxes):
+Preferred on Windows: **headless Chrome "Print to PDF"** (highest fidelity, and WeasyPrint's native GTK libs often fail to load on Windows). Use absolute Windows paths:
 ```
-python3 -c "from weasyprint import HTML; HTML('khan-family-cookbook.html').write_pdf('khan-family-cookbook.pdf')"
+"/c/Program Files/Google/Chrome/Application/chrome.exe" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf="C:\path\out.pdf" "C:\path\in.html"
 ```
-Install if needed: `pip install weasyprint --break-system-packages -q`. Verify page count and 8.5x11 size with pypdf.
+Fallback (Linux/sandbox): WeasyPrint — `python3 -c "from weasyprint import HTML; HTML('in.html').write_pdf('out.pdf')"` (install `pip install weasyprint --break-system-packages -q`). Verify page count and 8.5x11 size with pypdf.
 
 Note: WeasyPrint does not render emoji in color and handles some transforms differently than a browser. For the real book with actual photos this is fine. For pixel-perfect rotation/shadows, opening the HTML in a browser and using "Print to PDF" is the highest-fidelity path; mention this option.
 
