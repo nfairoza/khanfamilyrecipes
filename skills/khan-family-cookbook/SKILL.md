@@ -79,13 +79,22 @@ accents. If a page starts looking calm, beige, or tasteful-neutral, it's wrong.
    Existing recipe folders are finished — do not touch them unless Noor asks to
    edit that specific recipe (then regenerate just that folder's files).
 
-   **Page budget:** a `.page` is fixed-height and clips overflow — never let
-   content get cut off. Priority order on sheet 1: chips → title/rule/attribution/
-   yield → headnote → hero → ingredients + method → note box. The **taped original
-   handwritten card** (`.original`) goes on sheet 1 only when the method is short;
-   otherwise move it to the collage page or give it its own second sheet — it's a
-   centerpiece, not a footnote. Long methods flow to a second sheet naturally
-   (duplicate the `.page` chassis); don't shrink type to cram.
+   **Pagination is decided by counting, BEFORE writing any HTML — never by
+   render-and-squeeze.** One sheet only when ALL of these hold: ≤6 method steps,
+   ≤12 ingredient lines, headnote ≤3 lines, and no original-card scan (or ≤4 steps
+   if there is one). Otherwise it is a **two-sheet recipe** — a first-class
+   format, not a fallback:
+   - **Sheet 1 (presentation):** chips → title/rule/attribution/yield → headnote →
+     hero at FULL size → ingredients box (full width or with a short "you'll also
+     need" column). No method steps.
+   - **Sheet 2 (method):** slim accent strip repeating the recipe name in small
+     Fraunces caps → all steps in two comfortable columns if >8 → original card →
+     note box. Folio reads "…· ⟨Category⟩ · 2 of 2" (and sheet 1 "1 of 2").
+   The method NEVER splits across sheets, the hero is NEVER shrunk to fit, and
+   type size is NEVER reduced to cram. After rendering, verify nothing clipped
+   (render pages to PNG and check the lowest content row is above the bottom
+   margin) — if something clipped anyway, the fix is moving a block to sheet 2,
+   not shaving margins.
 
    If the recipe opens a **new category**, also generate that category's divider
    page once: `dividers/<category>.html` + `.pdf`, and record the color in
@@ -109,6 +118,8 @@ accents. If a page starts looking calm, beige, or tasteful-neutral, it's wrong.
    (note: no color emoji, some transforms differ from a browser).
 
    Verify with pypdf that the page count matches and pages are 8.5×11in (612×792pt).
+   For pixel-perfect polaroid tilt/shadows, opening the HTML in a browser and using
+   **Print → Save as PDF** (background graphics on) is also available.
 
 8. **Add the recipe to the index — don't rebuild it from scratch.**
    - `index.html`: the book's landing page/table of contents in the house style —
