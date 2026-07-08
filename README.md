@@ -4,16 +4,22 @@ A bright, happy heirloom recipe book for Noor and Yahya Khan, and for all the ge
 
 ## View the cookbook
 
-- **Live page (HTML):** [index.html](index.html) — once GitHub Pages is on, it will be live at https://nfairoza.github.io/khanfamilyrecipes/
-- **Print-ready PDF:** [khan-family-cookbook.pdf](khan-family-cookbook.pdf) — US Letter, sized for a 3-ring binder on cardstock
+- **Live page (HTML):** [index.html](index.html) — live at https://nfairoza.github.io/khanfamilyrecipes/
+- **Cover:** [cover.pdf](cover.pdf) · **Binder spine (1"):** [binder-spine.pdf](binder-spine.pdf)
+
+Each recipe is its own print-ready PDF (US Letter, 3-ring-binder margin) so you can print just the one you need and file it behind the right divider tab.
 
 ## Table of contents
 
-The cookbook is organized into colored sections, each with its own divider tab. Sections are created automatically as recipes are added.
+The cookbook is organized into colored sections, each with its own divider tab. Sections are created as recipes are added.
 
-### Breads & Bakes
-- Munshi Naan — *from the kitchen of Yahya*
-- Everyday Loaf — *from the kitchen of Yahya*
+### 🫓 Breads & Bakes
+[Section divider](dividers/breads-bakes.pdf)
+
+| Recipe | Cook | View | Print |
+|--------|------|------|-------|
+| Munshi Naan | Yahya | [HTML](recipes/munshi-naan/munshi-naan.html) | [PDF](recipes/munshi-naan/munshi-naan.pdf) |
+| Everyday Loaf | Yahya | [HTML](recipes/everyday-loaf/everyday-loaf.html) | [PDF](recipes/everyday-loaf/everyday-loaf.pdf) |
 
 *(This list grows as recipes are added.)*
 
@@ -37,11 +43,14 @@ The skill lives in [`skills/khan-family-cookbook/`](skills/khan-family-cookbook/
 
 The design spec is fully self-contained in `SKILL.md`, so the cookbook looks the same wherever it runs.
 
-## Files
+## Folder layout
 
-| File | What it is |
+| Path | What it is |
 |------|------------|
-| `index.html` | The cookbook, viewable in a browser / GitHub Pages |
-| `khan-family-cookbook.pdf` | Print-ready PDF for the binder |
-| `skills/khan-family-cookbook/SKILL.md` | The reusable skill |
+| `index.html` | Landing page / table of contents (also the GitHub Pages site) |
+| `cover.html` / `cover.pdf` | The cover, with the family photo |
+| `dividers/` | One divider page per section (e.g. `breads-bakes`) |
+| `recipes/<slug>/` | One self-contained folder per recipe: its HTML + print PDF |
+| `binder-spine.html` / `.pdf` | 1" binder spine insert |
+| `skills/khan-family-cookbook/` | The reusable skill (SKILL.md, references, assets) |
 | `khan-family-cookbook.skill` | The skill, zipped for one-click install |

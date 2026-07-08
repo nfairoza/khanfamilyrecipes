@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Everyday Loaf — The Khan Family Cookbook</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Caveat:wght@500;700&display=swap');
+:root{ --ink:#241f1a; --soft:#7a7468; --paper:#ffffff; }
+*{box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
+  font-family:'Source Serif 4', Georgia, serif; font-size:10.5pt; line-height:1.5;}
+@page{ size:Letter; margin:0; }
+.page{position:relative; width:8.5in; height:11in; margin:0.25in auto; overflow:hidden;
+  background:var(--paper); padding:0.7in 0.7in 0.7in 1.15in; page-break-after:always;
+  box-shadow:0 2px 14px rgba(0,0,0,.12);}
+.holes{position:absolute; left:0.45in; top:0; bottom:0; width:0; z-index:9;}
+.holes i{position:absolute; left:-0.14in; width:0.28in; height:0.28in; border-radius:50%;
+  background:#efece7; box-shadow:inset 0 1px 3px rgba(0,0,0,.18);}
+.holes i:nth-child(1){top:1.15in} .holes i:nth-child(2){top:5.36in} .holes i:nth-child(3){top:9.57in}
+@media print{ .holes{display:none} body{background:#fff} .page{margin:0; box-shadow:none} }
+.chips{display:flex; gap:.08in; margin-bottom:.14in;}
+.chip{background:var(--accent); color:#fff; font-family:'Fraunces',serif; font-weight:600;
+  font-size:8pt; letter-spacing:1.5px; text-transform:uppercase; padding:.05in .14in; border-radius:999px;}
+.chip.ghost{background:var(--accent-soft); color:var(--accent);}
+.rhead h2{font-family:'Fraunces',serif; font-weight:900; font-size:27pt; margin:0; line-height:1.1;}
+.rhead h2 em{font-style:italic; font-weight:600; color:var(--accent);}
+.rhead .rule{height:0; border-top:2.5px solid var(--accent); border-bottom:1px solid var(--accent);
+  padding-top:2px; margin:.1in 0 .08in;}
+.rhead .attrib{font-family:'Caveat',cursive; font-size:16pt; color:var(--accent); margin:0 0 .04in;}
+.rhead .yield{font-size:8.5pt; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--accent); font-weight:600; margin:0 0 .14in;}
+.headnote{font-style:italic; color:var(--ink); font-size:10.5pt; line-height:1.5; margin:0 0 .14in; max-width:6.1in;}
+.headnote b{font-style:italic; color:var(--accent);}
+.hero{margin:0 0 .14in;}
+.hero .placeholder{width:100%; height:0.85in; border:2.5px dashed var(--accent-2);
+  border-radius:14px; background:var(--accent-soft); display:flex; align-items:center;
+  justify-content:center; color:var(--soft); font-family:'Caveat',cursive; font-size:14pt;}
+.hero figcaption{font-family:'Caveat',cursive; font-size:13pt; color:var(--soft); text-align:center; margin-top:.05in;}
+.cols{display:grid; grid-template-columns:2.6in 1fr; gap:.28in;}
+.ingredients{background:var(--accent-soft); border-radius:14px; padding:.2in;}
+.ingredients h3, .method h3{font-family:'Fraunces',serif; margin:0 0 .1in; font-size:10.5pt;
+  font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:2px;}
+.ingredients ul{margin:0; padding:0; list-style:none;}
+.ingredients li{margin:.055in 0; display:flex; justify-content:space-between; gap:.1in;
+  border-bottom:1px dashed var(--accent-2); padding-bottom:.045in; font-size:10pt;}
+.ingredients li:last-child{border-bottom:none;}
+.ingredients li .amt{color:var(--accent); font-weight:600; white-space:nowrap;}
+.ingredients .total{margin-top:.08in; padding-top:.08in; border-top:2px solid var(--accent);
+  display:flex; justify-content:space-between; font-family:'Fraunces',serif; font-weight:600; font-size:9.5pt;}
+.ingredients .foot{margin-top:.1in; font-size:9pt; color:var(--soft); font-style:italic; line-height:1.4;}
+.method ol{margin:0; padding:0; list-style:none; counter-reset:step;}
+.method li{counter-increment:step; position:relative; padding-left:.42in; margin:0 0 .075in;}
+.method li::before{content:counter(step); position:absolute; left:0; top:.01in;
+  width:.3in; height:.3in; border-radius:50%; background:var(--accent); color:#fff;
+  font-family:'Fraunces',serif; font-weight:600; font-size:10pt;
+  display:flex; align-items:center; justify-content:center;}
+.note{border:2px solid var(--accent-2); border-radius:12px; background:#fff;
+  padding:.11in .18in; margin-top:.12in; font-size:9.5pt;}
+.note b{font-family:'Fraunces',serif; color:var(--accent);}
+.folio{position:absolute; left:1.15in; bottom:.42in; color:var(--soft); font-size:8.5pt;
+  font-style:italic; letter-spacing:.5px;}
+.pageno{position:absolute; right:.55in; bottom:.42in; color:var(--soft);
+  font-family:'Fraunces',serif; font-size:9pt;}
+</style>
+</head>
+<body>
+<section class="page recipe" style="--accent:#0aa6a6; --accent-2:#6ee0d6; --accent-soft:#e2fbf8;">
+  <div class="holes"><i></i><i></i><i></i></div>
+
+  <div class="chips"><span class="chip">Breads &amp; Bakes</span><span class="chip ghost">64% Hydration</span></div>
+
+  <div class="rhead">
+    <h2>Everyday <em>Loaf</em></h2>
+    <div class="rule"></div>
+    <p class="attrib">from the kitchen of Yahya</p>
+    <p class="yield">1 standard loaf · Rise 2 hrs · Bake 30–35 min · 375°F (190°C)</p>
+  </div>
+
+  <p class="headnote"><b>The dough that does everything.</b> Built on a baker's formula
+  at 64% hydration — soft enough for sandwiches, sturdy enough to shape free-form. The
+  percentages are by weight of flour, so scale it up or down and it stays true.</p>
+
+  <figure class="hero">
+    <div class="placeholder">a photo of the loaf goes here ✦</div>
+    <figcaption>deep golden, cooled on a rack</figcaption>
+  </figure>
+
+  <div class="cols">
+    <aside class="ingredients">
+      <h3>Formula · 1 loaf</h3>
+      <ul>
+        <li><span>Flour (AP or bread)</span><span class="amt">375 g · 100%</span></li>
+        <li><span>Water (warm)</span><span class="amt">240 g · 64%</span></li>
+        <li><span>Butter or Oil</span><span class="amt">14 g · 3.7%</span></li>
+        <li><span>Sugar (or Honey)</span><span class="amt">12 g · 3.2%</span></li>
+        <li><span>Salt</span><span class="amt">9 g · 2.4%</span></li>
+        <li><span>Active Dry Yeast</span><span class="amt">7 g · 1.9%</span></li>
+      </ul>
+      <div class="total"><span>Total Dough</span><span>657 g · 175.2%</span></div>
+      <p class="foot">Hydration = water ÷ flour × 100 = 64%. Aim for a final dough temp of 76–78°F (24–26°C) — adjust water temp to hit it.</p>
+    </aside>
+    <div class="method">
+      <h3>Method</h3>
+      <ol>
+        <li><b>Bloom the yeast.</b> Stir the yeast (7 g) and sugar (12 g) into the warm water (240 g). Rest 5–10 min until foamy.</li>
+        <li><b>Mix.</b> Combine flour (375 g) and salt (9 g). Add the yeast water and butter or oil (14 g). Mix to a rough, shaggy dough.</li>
+        <li><b>Knead.</b> 10 min by hand (or 6–7 min in a stand mixer on medium) until smooth and elastic — it should pass a windowpane test.</li>
+        <li><b>Bulk rise.</b> Cover and ferment ~1 hr at warm room temperature, until doubled.</li>
+        <li><b>Shape.</b> Gently degas, shape into a tight loaf, seam-side down in a greased 9×5 in pan (or free-form on a tray).</li>
+        <li><b>Proof.</b> Cover and proof 45–60 min, until the dough crowns ~1 in above the rim and springs back slowly when poked.</li>
+        <li><b>Bake.</b> 375°F (190°C) for 30–35 min, until deep golden and the internal temperature reads 200–205°F (93–96°C).</li>
+        <li><b>Cool.</b> Turn out and cool on a rack at least 1 hr before slicing — cutting hot bread gums the crumb.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="note"><b>Yahya's note:</b> the loaf is done when the thermometer says so, not when the timer rings. 64% hydration is forgiving — wetter for a more open crumb, drier for tidy sandwich slices, but weigh it either way.</div>
+
+  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes</div>
+  <div class="pageno">Everyday Loaf</div>
+</section>
+</body>
+</html>
