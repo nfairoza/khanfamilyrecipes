@@ -26,10 +26,15 @@ assign the next free hue from the palette, add a row here, and keep the file upd
 | Soups & Broths | soup, broth, shorba, stock | `#5fc23b` | `#9ade6f` | `#e9f9df` | 🥣 | For rainy days and runny noses. |
 | Sandwiches & Snacks | sandwich, chaat, pakora, samosa, roll, cutlet | `#ff7eb6` | `#ffb1d3` | `#ffe6f1` | 🥪 | Between-meals happiness. |
 | Sweets | kheer, halwa, dessert, mithai, cake (dessert), pudding | `#c86bff` | `#e3a7ff` | `#f5e6ff` | 🍮 | Always room. |
+| Chutneys | chutney, ulikaram, pachadi, thogayal, podi, relish | `#3fae5a` | `#8fd89e` | `#e6f7ea` | 🌶️ | The little jars that carry the meal. |
+| Seafood | prawn, shrimp, jhinga, fish, crab, chingri | `#13c4c4` | `#6fe0e0` | `#e0fafa` | 🦐 | From the coast, cooked with care. |
 
-Free hues remaining in the family palette for new categories: turquoise `#13c4c4`,
-deep leaf, sky blue `#3aa0ff`, sunflower variants. Stay inside the bright family —
-no muted/dusty tones.
+Free hues remaining in the family palette for new categories: sky blue `#3aa0ff`,
+sunflower variants. Stay inside the bright family — no muted/dusty tones.
+
+Note: Salans is defined above but currently has no recipes in the book (Palak
+Ulikaram moved to Chutneys). Keep the row for future curries; its divider is
+generated on demand when the first salan is added.
 
 ## Region/style tags
 
