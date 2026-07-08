@@ -18,50 +18,57 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
   background:#efece7; box-shadow:inset 0 1px 3px rgba(0,0,0,.18);}
 .holes i:nth-child(1){top:1.15in} .holes i:nth-child(2){top:5.36in} .holes i:nth-child(3){top:9.57in}
 @media print{ .holes{display:none} body{background:#fff} .page{margin:0; box-shadow:none} }
+.opener{background:linear-gradient(160deg, var(--accent-soft), #fff);
+  display:flex; flex-direction:column; justify-content:center; align-items:flex-start;}
+.opener .kicker{font-family:'Fraunces',serif; font-weight:600; font-size:9pt; letter-spacing:3px;
+  text-transform:uppercase; color:var(--accent); margin-bottom:.1in;}
+.opener h1{font-family:'Fraunces',serif; font-weight:900; font-size:40pt; line-height:1.05; margin:0;}
+.opener h1 em{font-style:italic; font-weight:600; color:var(--accent);}
+.opener .rule{height:0; border-top:3px solid var(--accent); width:2in; margin:.2in 0;}
+.opener .memory{font-style:italic; font-size:12pt; line-height:1.65; max-width:5.4in; color:var(--ink);}
+.opener .memory b{color:var(--accent); font-style:italic;}
+.opener .attrib{font-family:'Caveat',cursive; font-size:18pt; color:var(--accent); margin-top:.3in;}
+.photopg h3{font-family:'Fraunces',serif; font-weight:600; font-size:10pt; letter-spacing:2px;
+  text-transform:uppercase; color:var(--accent); margin:0 0 .16in;}
+.frame{border:2.5px dashed var(--accent-2); border-radius:14px; background:var(--accent-soft);
+  display:flex; align-items:center; justify-content:center; color:var(--soft);
+  font-family:'Caveat',cursive; font-size:15pt; text-align:center; overflow:hidden;}
+.frame img{width:100%; height:100%; object-fit:cover;}
+.frame.main{height:4.6in; margin-bottom:.12in;}
+.cap{font-family:'Caveat',cursive; font-size:13pt; color:var(--soft); text-align:center; margin:0 0 .22in;}
+.frame.side{height:2.7in;}
+.side-row{display:grid; grid-template-columns:1fr 1fr; gap:.22in;}
+.side-row .cap{margin-top:.06in;}
 .chips{display:flex; gap:.08in; margin-bottom:.14in;}
 .chip{background:var(--accent); color:#fff; font-family:'Fraunces',serif; font-weight:600;
   font-size:8pt; letter-spacing:1.5px; text-transform:uppercase; padding:.05in .14in; border-radius:999px;}
 .chip.ghost{background:var(--accent-soft); color:var(--accent);}
-.rhead h2{font-family:'Fraunces',serif; font-weight:900; font-size:27pt; margin:0; line-height:1.1;}
+.rhead h2{font-family:'Fraunces',serif; font-weight:900; font-size:24pt; margin:0; line-height:1.1;}
 .rhead h2 em{font-style:italic; font-weight:600; color:var(--accent);}
 .rhead .rule{height:0; border-top:2.5px solid var(--accent); border-bottom:1px solid var(--accent);
-  padding-top:2px; margin:.1in 0 .08in;}
-.rhead .attrib{font-family:'Caveat',cursive; font-size:16pt; color:var(--accent); margin:0 0 .04in;}
-.rhead .yield{font-size:8.5pt; letter-spacing:2.5px; text-transform:uppercase;
-  color:var(--accent); font-weight:600; margin:0 0 .14in;}
-.headnote{font-style:italic; color:var(--ink); font-size:11pt; line-height:1.6; margin:0 0 .28in; max-width:6.1in;}
-.headnote b{font-style:italic; color:var(--accent);}
-.hero{margin:0 0 .28in;}
-.hero.arch img{height:3.2in; border-radius:2.4in 2.4in 14px 14px;}
-.hero .placeholder{width:100%; height:3.2in; border:2.5px dashed var(--accent-2);
-  border-radius:2.4in 2.4in 14px 14px; background:var(--accent-soft); display:flex; align-items:center;
-  justify-content:center; color:var(--soft); font-family:'Caveat',cursive; font-size:16pt;}
-.hero figcaption{font-family:'Caveat',cursive; font-size:13pt; color:var(--soft); text-align:center; margin-top:.06in;}
-.ingredients{background:var(--accent-soft); border-radius:14px; padding:.24in .3in;}
-.ingredients h3, .method h3{font-family:'Fraunces',serif; margin:0 0 .12in; font-size:11pt;
+  padding-top:2px; margin:.1in 0 .06in;}
+.rhead .attrib{font-family:'Caveat',cursive; font-size:15pt; color:var(--accent); margin:0 0 .02in;}
+.rhead .yield{font-size:8pt; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--accent); font-weight:600; margin:0 0 .16in;}
+.ingredients{background:var(--accent-soft); border-radius:14px; padding:.2in .24in; margin-bottom:.2in;}
+.ingredients h3{font-family:'Fraunces',serif; margin:0 0 .08in; font-size:10.5pt;
   font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:2px;}
-.ingredients ul{margin:0; padding:0; list-style:none; column-count:2; column-gap:.4in;}
-.ingredients li{margin:.07in 0; display:flex; justify-content:space-between; gap:.14in;
-  border-bottom:1px dashed var(--accent-2); padding-bottom:.06in; break-inside:avoid;}
+.ing-cols{display:grid; grid-template-columns:1fr 1fr; gap:.06in .34in;}
+.ingredients ul{margin:0; padding:0; list-style:none;}
+.ingredients li{margin:.05in 0; display:flex; justify-content:space-between; gap:.12in;
+  border-bottom:1px dashed var(--accent-2); padding-bottom:.04in;}
 .ingredients li .amt{color:var(--accent); font-weight:600; white-space:nowrap;}
-.ingredients .foot{margin-top:.14in; font-size:9.5pt; color:var(--soft); font-style:italic; line-height:1.45;}
-/* continuation sheet */
-.cont-strip{background:linear-gradient(90deg, var(--accent), var(--accent-2));
-  border-radius:12px; padding:.12in .24in; color:#fff; margin-bottom:.24in;
-  display:flex; align-items:baseline; justify-content:space-between;}
-.cont-strip h2{font-family:'Fraunces',serif; font-weight:600; font-size:12pt;
-  letter-spacing:2px; text-transform:uppercase; margin:0;}
-.cont-strip span{font-family:'Caveat',cursive; font-size:13pt;}
-.method ol{margin:0; padding:0; list-style:none; counter-reset:step;}
-.method.two-col ol{column-count:2; column-gap:.4in;}
-.method.two-col li{break-inside:avoid;}
-.method li{counter-increment:step; position:relative; padding-left:.42in; margin:0 0 .18in;}
+.ingredients .foot{margin-top:.08in; font-size:9pt; color:var(--soft); font-style:italic; line-height:1.4;}
+.method h3{font-family:'Fraunces',serif; margin:0 0 .1in; font-size:10.5pt;
+  font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:2px;}
+.method ol{margin:0; padding:0; list-style:none; counter-reset:step; column-count:2; column-gap:.34in;}
+.method li{counter-increment:step; position:relative; padding-left:.38in; margin:0 0 .12in; break-inside:avoid;}
 .method li::before{content:counter(step); position:absolute; left:0; top:.01in;
-  width:.3in; height:.3in; border-radius:50%; background:var(--accent); color:#fff;
-  font-family:'Fraunces',serif; font-weight:600; font-size:10pt;
+  width:.28in; height:.28in; border-radius:50%; background:var(--accent); color:#fff;
+  font-family:'Fraunces',serif; font-weight:600; font-size:9.5pt;
   display:flex; align-items:center; justify-content:center;}
 .note{border:2px solid var(--accent-2); border-radius:12px; background:#fff;
-  padding:.14in .22in; margin-top:.24in; font-size:10.5pt;}
+  padding:.12in .2in; margin-top:.14in; font-size:10pt;}
 .note b{font-family:'Fraunces',serif; color:var(--accent);}
 .folio{position:absolute; left:1.15in; bottom:.42in; color:var(--soft); font-size:8.5pt;
   font-style:italic; letter-spacing:.5px;}
@@ -71,12 +78,39 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
 </head>
 <body>
 
-<!-- ===== SHEET 1 · presentation ===== -->
+<!-- ===== PAGE 1 · title opener ===== -->
+<section class="page opener" style="--accent:#0aa6a6; --accent-2:#6ee0d6; --accent-soft:#e2fbf8;">
+  <div class="holes"><i></i><i></i><i></i></div>
+  <div class="kicker">Breads &amp; Bakes · Yeasted</div>
+  <h1>Munshi <em>Naan</em></h1>
+  <div class="rule"></div>
+  <p class="memory"><b>Soft, pillowy, and weighed to the gram.</b> The yogurt is what
+  keeps the crumb tender instead of bready, and the ghee off the heat gives it that
+  glossy, restaurant-style finish. Measured, not guessed — so it comes out the same
+  every time.</p>
+  <div class="attrib">from the kitchen of Yahya</div>
+  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes</div>
+  <div class="pageno">Munshi Naan</div>
+</section>
+
+<!-- ===== PAGE 2 · photo page (LEFT) ===== -->
+<section class="page photopg" style="--accent:#0aa6a6; --accent-2:#6ee0d6; --accent-soft:#e2fbf8;">
+  <div class="holes"><i></i><i></i><i></i></div>
+  <h3>Munshi Naan</h3>
+  <div class="frame main">main photo — the finished naan ✦</div>
+  <div class="cap">fresh off the tava</div>
+  <div class="side-row">
+    <div><div class="frame side">side photo ✦</div><div class="cap">the risen dough</div></div>
+    <div><div class="frame side">side photo ✦</div><div class="cap">rolled and ready</div></div>
+  </div>
+  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes</div>
+  <div class="pageno">photos</div>
+</section>
+
+<!-- ===== PAGE 3 · the recipe (RIGHT) ===== -->
 <section class="page recipe" style="--accent:#0aa6a6; --accent-2:#6ee0d6; --accent-soft:#e2fbf8;">
   <div class="holes"><i></i><i></i><i></i></div>
-
   <div class="chips"><span class="chip">Breads &amp; Bakes</span><span class="chip ghost">Yeasted</span></div>
-
   <div class="rhead">
     <h2>Munshi <em>Naan</em></h2>
     <div class="rule"></div>
@@ -84,57 +118,53 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
     <p class="yield">Makes 4 · Rise 60–90 min · Cook 2–3 min each</p>
   </div>
 
-  <p class="headnote"><b>Soft, pillowy, and weighed to the gram.</b> The yogurt is what
-  keeps the crumb tender instead of bready, and the ghee off the heat gives it that
-  glossy, restaurant-style finish. Measured, not guessed — so it comes out the same
-  every time.</p>
-
-  <figure class="hero arch">
-    <div class="placeholder">a photo of the naan goes here ✦</div>
-    <figcaption>fresh off the tava</figcaption>
-  </figure>
-
   <aside class="ingredients">
     <h3>Ingredients</h3>
-    <ul>
+    <ul class="ing-cols">
       <li><span>All-Purpose Flour</span><span class="amt">240 g</span></li>
-      <li><span>Active Dry Yeast (Khamir)</span><span class="amt">3 g</span></li>
-      <li><span>Sugar</span><span class="amt">4 g</span></li>
       <li><span>Warm Milk (or water)</span><span class="amt">120 g</span></li>
+      <li><span>Active Dry Yeast (Khamir)</span><span class="amt">3 g</span></li>
       <li><span>Salt</span><span class="amt">4.5 g</span></li>
+      <li><span>Sugar</span><span class="amt">4 g</span></li>
       <li><span>Plain Yogurt</span><span class="amt">30 g</span></li>
       <li><span>Ghee (or melted butter)</span><span class="amt">14 g</span></li>
     </ul>
     <p class="foot">Milk warm, not hot — ~105°F (40°C). Above 115°F (46°C) kills the yeast.</p>
   </aside>
 
-  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes · 1 of 2</div>
+  <div class="method">
+    <h3>Method</h3>
+    <ol>
+      <li><b>Bloom the yeast.</b> Stir the yeast and sugar into the warm milk (120 g, ~105°F). Stand 5–10 min until foamy.</li>
+      <li><b>Mix.</b> Combine flour (240 g) and salt (4.5 g). Add the yogurt (30 g), ghee (14 g) and yeast milk. Mix to a shaggy dough.</li>
+      <li><b>Knead.</b> 8–10 min by hand until smooth, soft and slightly tacky — it should spring back when pressed.</li>
+      <li><b>First rise.</b> Cover and rest in a warm spot 60–90 min, until doubled.</li>
+      <li><b>Divide &amp; shape.</b> Knock back, divide into 4 (~102 g each). Ball, cover, rest 10 min.</li>
+      <li><b>Roll.</b> Roll each into a teardrop ~8 in long, ~1/4 in thick.</li>
+      <li><b>Cook hot.</b> Screaming-hot tava, 2–3 min total — flip once big bubbles form and it's charred in spots.</li>
+      <li><b>Finish.</b> Brush with ghee off the heat; keep wrapped in a towel so they stay soft.</li>
+    </ol>
+    <div class="note"><b>Yahya's note:</b> weigh everything. The yogurt is not optional — it's what makes the crumb tender. If the dough fights the roll, rest it another 5 min.</div>
+  </div>
+
+  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes</div>
   <div class="pageno">Munshi Naan</div>
 </section>
 
-<!-- ===== SHEET 2 · method ===== -->
-<section class="page recipe" style="--accent:#0aa6a6; --accent-2:#6ee0d6; --accent-soft:#e2fbf8;">
+<!-- ===== PAGE 4 · more photos ===== -->
+<section class="page photopg" style="--accent:#0aa6a6; --accent-2:#6ee0d6; --accent-soft:#e2fbf8;">
   <div class="holes"><i></i><i></i><i></i></div>
-  <div class="cont-strip"><h2>Munshi Naan</h2><span>continued…</span></div>
-
-  <div class="method two-col">
-    <h3>Method</h3>
-    <ol>
-      <li><b>Bloom the yeast.</b> Stir the yeast and sugar into the warm milk (120 g, ~105°F / 40°C). Stand 5–10 min until foamy. No foam means dead yeast — start over.</li>
-      <li><b>Mix.</b> Combine flour (240 g) and salt (4.5 g). Add the yogurt (30 g), ghee (14 g) and the yeast milk. Mix to a shaggy dough.</li>
-      <li><b>Knead.</b> 8–10 min by hand (or 5 min in a stand mixer on medium) until smooth, soft and slightly tacky. It should spring back when pressed.</li>
-      <li><b>First rise.</b> Cover and rest in a warm spot 60–90 min, until doubled.</li>
-      <li><b>Divide &amp; shape.</b> Knock back, divide into 4 equal pieces (~102 g each). Ball them, cover, rest 10 min so the gluten relaxes.</li>
-      <li><b>Roll.</b> Roll or stretch each into a teardrop ~8 in long, ~1/4 in thick.</li>
-      <li><b>Cook hot.</b> Screaming-hot cast-iron skillet or tava, 2–3 min total — flip once big bubbles form and the underside is charred in spots.</li>
-      <li><b>Finish.</b> Brush with extra ghee straight off the heat. Keep wrapped in a towel until serving so they stay soft.</li>
-    </ol>
+  <h3>More from this bake</h3>
+  <div class="side-row">
+    <div><div class="frame side">side photo ✦</div><div class="cap">blooming the yeast</div></div>
+    <div><div class="frame side">side photo ✦</div><div class="cap">kneaded smooth</div></div>
   </div>
-
-  <div class="note"><b>Yahya's note:</b> weigh everything. The yogurt is not optional — it is what makes the crumb tender. If the dough fights the roll, let it rest another 5 min; relaxed gluten rolls thin without tearing.</div>
-
-  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes · 2 of 2</div>
-  <div class="pageno">Munshi Naan</div>
+  <div class="side-row">
+    <div><div class="frame side">side photo ✦</div><div class="cap">bubbling on the tava</div></div>
+    <div><div class="frame side">side photo ✦</div><div class="cap">brushed with ghee</div></div>
+  </div>
+  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes</div>
+  <div class="pageno">photos</div>
 </section>
 
 </body>

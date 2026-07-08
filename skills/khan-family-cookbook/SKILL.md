@@ -79,26 +79,43 @@ accents. If a page starts looking calm, beige, or tasteful-neutral, it's wrong.
    Existing recipe folders are finished — do not touch them unless Noor asks to
    edit that specific recipe (then regenerate just that folder's files).
 
-   **Pagination is decided by counting, BEFORE writing any HTML — never by
-   render-and-squeeze.** One sheet only when ALL of these hold: ≤6 method steps,
-   ≤12 ingredient lines, headnote ≤3 lines, and no original-card scan (or ≤4 steps
-   if there is one). Otherwise it is a **two-sheet recipe** — a first-class
-   format, not a fallback:
-   - **Sheet 1 (presentation):** chips → title/rule/attribution/yield → headnote →
-     hero at FULL size → ingredients box (full width or with a short "you'll also
-     need" column). No method steps.
-   - **Sheet 2 (method):** slim accent strip repeating the recipe name in small
-     Fraunces caps → all steps in two comfortable columns if >8 → original card →
-     note box. Folio reads "…· ⟨Category⟩ · 2 of 2" (and sheet 1 "1 of 2").
-   The method NEVER splits across sheets, the hero is NEVER shrunk to fit, and
-   type size is NEVER reduced to cram. After rendering, verify nothing clipped
-   (render pages to PNG and check the lowest content row is above the bottom
-   margin) — if something clipped anyway, the fix is moving a block to sheet 2,
-   not shaving margins.
+   **Print double-sided: every recipe is a 4-page unit so no side is ever blank.**
+   Noor prints on a duplex printer and files sheets in a binder, so each printed
+   sheet must have content on BOTH sides, and opening to a recipe must show a
+   **photo page on the left, the recipe on the right**. Build every recipe as four
+   `.page` sections in this exact order (they duplex so pages 2–3 land as the
+   facing spread):
+   - **Page 1 — title opener:** big Fraunces title, a memory/headnote line, the
+     Caveat attribution, on a soft accent-gradient. Fills the back of the divider's
+     facing side.
+   - **Page 2 — photo page (lands LEFT):** one big `.frame.main` (the finished
+     dish) + a `.side-row` of two `.frame.side` frames, each with a Caveat caption
+     line. Until real photos arrive, leave labeled dashed placeholders ("main
+     photo", "side photo") so Noor just drops images into `photos/` later.
+   - **Page 3 — the recipe (lands RIGHT):** chips → title/rule/attribution/yield →
+     ingredients box → method with colored step numbers (two columns) → note box.
+     This must fit on ONE page — condense sensibly (two-column method/ingredients),
+     since the presentation lives on pages 1–2.
+   - **Page 4 — more photos / notes:** a grid of `.frame.side` process shots with
+     captions (or overflow notes). Fills the last side.
+   Verify the render is exactly 4 pages and nothing clips (render to PNG, check the
+   lowest content row is above the bottom margin). The method NEVER shrinks type to
+   cram — if page 3 overflows, move overflow to page 4, don't shave margins.
+   For a recipe with a genuinely huge method, use 6 pages (opener, photo, recipe
+   sheet 1, recipe sheet 2, photo, notes) keeping the left/right facing rule.
+
+   **Dividers are 2 pages** for the same reason: page 1 is the section card (with
+   edge tab), page 2 is an "In this section" contents card (`.back` — eyebrow,
+   name, blurb, and a `.toc` list of the section's recipes with authors) so the
+   back is never blank. Regenerate a divider's page 2 when a recipe is added to
+   that section.
 
    If the recipe opens a **new category**, also generate that category's divider
-   page once: `dividers/<category>.html` + `.pdf`, and record the color in
+   (both pages): `dividers/<category>.html` + `.pdf`, and record the color in
    `references/categories.md`.
+
+   Tell Noor to print with **Two-Sided / "Flip on long edge"** so the facing-page
+   layout comes out right.
 
 7. **Render each new PDF.** On Noor's Windows machine, use **headless Chrome
    "Print to PDF"** — WeasyPrint's native GTK libraries fail to load on Windows,

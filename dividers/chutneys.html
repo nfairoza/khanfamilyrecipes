@@ -31,6 +31,22 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
   padding:.14in .18in .14in .22in; border-radius:14px 0 0 14px;
   writing-mode:vertical-rl; text-orientation:mixed;
   box-shadow:-3px 3px 10px rgba(0,0,0,.15);}
+.back{padding:1.1in 0.9in 0.9in 1.15in; background:linear-gradient(160deg, var(--accent-soft), #fff);}
+.back .eyebrow{font-family:'Fraunces',serif; font-weight:600; font-size:9pt; letter-spacing:3px;
+  text-transform:uppercase; color:var(--accent); margin-bottom:.08in;}
+.back h2{font-family:'Fraunces',serif; font-weight:900; font-size:26pt; margin:0 0 .06in;}
+.back .blurb{font-style:italic; color:var(--soft); font-size:11.5pt; margin:0 0 .3in;}
+.back .rule{height:0; border-top:2.5px solid var(--accent); width:1.6in; margin:0 0 .3in;}
+.toc{list-style:none; margin:0; padding:0;}
+.toc li{display:flex; justify-content:space-between; align-items:baseline; gap:.2in;
+  padding:.14in 0; border-bottom:1px dashed var(--accent-2);}
+.toc .name{font-family:'Fraunces',serif; font-weight:600; font-size:13pt;}
+.toc .who{font-family:'Caveat',cursive; font-size:14pt; color:var(--accent);}
+.holes{position:absolute; left:0.45in; top:0; bottom:0; width:0; z-index:9;}
+.holes i{position:absolute; left:-0.14in; width:0.28in; height:0.28in; border-radius:50%;
+  background:#efece7; box-shadow:inset 0 1px 3px rgba(0,0,0,.18);}
+.holes i:nth-child(1){top:1.15in} .holes i:nth-child(2){top:5.36in} .holes i:nth-child(3){top:9.57in}
+@media print{ .holes{display:none} }
 </style>
 </head>
 <body>
@@ -42,6 +58,16 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
     <p>The little jars that carry the meal.</p>
   </div>
   <div class="tab" style="--tab-top:4.6in">CHUTNEYS</div>
+</section>
+<section class="page back" style="--accent:#3fae5a; --accent-2:#8fd89e; --accent-soft:#e6f7ea;">
+  <div class="holes"><i></i><i></i><i></i></div>
+  <div class="eyebrow">In this section</div>
+  <h2>Chutneys</h2>
+  <p class="blurb">The tangy little sides — ground, tempered, and made to carry a plate of rice.</p>
+  <div class="rule"></div>
+  <ul class="toc">
+    <li><span class="name">Palak Ulikaram</span><span class="who">Noor</span></li>
+  </ul>
 </section>
 </body>
 </html>

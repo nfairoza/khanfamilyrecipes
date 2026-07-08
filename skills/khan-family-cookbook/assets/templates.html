@@ -156,6 +156,44 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
 .method.two-col ol{column-count:2; column-gap:.35in;}
 .method.two-col li{break-inside:avoid;}
 
+/* ---- 4-page unit: title opener (page 1) ---- */
+.opener{background:linear-gradient(160deg, var(--accent-soft), #fff);
+  display:flex; flex-direction:column; justify-content:center; align-items:flex-start;}
+.opener .kicker{font-family:'Fraunces',serif; font-weight:600; font-size:9pt; letter-spacing:3px;
+  text-transform:uppercase; color:var(--accent); margin-bottom:.1in;}
+.opener h1{font-family:'Fraunces',serif; font-weight:900; font-size:40pt; line-height:1.05; margin:0;}
+.opener h1 em{font-style:italic; font-weight:600; color:var(--accent);}
+.opener .rule{height:0; border-top:3px solid var(--accent); width:2in; margin:.2in 0;}
+.opener .memory{font-style:italic; font-size:12pt; line-height:1.65; max-width:5.4in;}
+.opener .memory b{color:var(--accent); font-style:italic;}
+.opener .attrib{font-family:'Caveat',cursive; font-size:18pt; color:var(--accent); margin-top:.3in;}
+
+/* ---- photo pages (page 2 = LEFT of the facing spread, page 4 = notes/extras) ---- */
+.photopg h3{font-family:'Fraunces',serif; font-weight:600; font-size:10pt; letter-spacing:2px;
+  text-transform:uppercase; color:var(--accent); margin:0 0 .16in;}
+.frame{border:2.5px dashed var(--accent-2); border-radius:14px; background:var(--accent-soft);
+  display:flex; align-items:center; justify-content:center; color:var(--soft);
+  font-family:'Caveat',cursive; font-size:15pt; text-align:center; overflow:hidden;}
+.frame img{width:100%; height:100%; object-fit:cover;}   /* drop real photos in here */
+.frame.main{height:4.6in; margin-bottom:.12in;}
+.frame.side{height:2.7in;}
+.side-row{display:grid; grid-template-columns:1fr 1fr; gap:.22in;}
+.cap{font-family:'Caveat',cursive; font-size:13pt; color:var(--soft); text-align:center; margin:0 0 .22in;}
+.side-row .cap{margin-top:.06in;}
+
+/* ---- divider back (page 2 of a 2-page divider): section contents ---- */
+.back{padding:1.1in 0.9in 0.9in 1.15in; background:linear-gradient(160deg, var(--accent-soft), #fff);}
+.back .eyebrow{font-family:'Fraunces',serif; font-weight:600; font-size:9pt; letter-spacing:3px;
+  text-transform:uppercase; color:var(--accent); margin-bottom:.08in;}
+.back h2{font-family:'Fraunces',serif; font-weight:900; font-size:26pt; margin:0 0 .06in;}
+.back .blurb{font-style:italic; color:var(--soft); font-size:11.5pt; margin:0 0 .3in;}
+.back .rule{height:0; border-top:2.5px solid var(--accent); width:1.6in; margin:0 0 .3in;}
+.toc{list-style:none; margin:0; padding:0;}
+.toc li{display:flex; justify-content:space-between; align-items:baseline; gap:.2in;
+  padding:.14in 0; border-bottom:1px dashed var(--accent-2);}
+.toc .name{font-family:'Fraunces',serif; font-weight:600; font-size:13pt;}
+.toc .who{font-family:'Caveat',cursive; font-size:14pt; color:var(--accent);}
+
 /* taped-in scan of the ORIGINAL handwritten recipe card (heirloom centerpiece) */
 .original{position:relative; margin:.22in auto 0; width:4.6in; transform:rotate(-1.5deg);
   background:#fff; padding:.1in; box-shadow:0 8px 20px rgba(0,0,0,.16);}
