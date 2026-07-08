@@ -21,6 +21,13 @@ The cookbook is organized into colored sections, each with its own divider tab. 
 | Munshi Naan | Yahya | [HTML](recipes/munshi-naan/munshi-naan.html) | [PDF](recipes/munshi-naan/munshi-naan.pdf) |
 | Everyday Loaf | Yahya | [HTML](recipes/everyday-loaf/everyday-loaf.html) | [PDF](recipes/everyday-loaf/everyday-loaf.pdf) |
 
+### 🍲 Salans
+[Section divider](dividers/salans.pdf)
+
+| Recipe | Cook | View | Print |
+|--------|------|------|-------|
+| Palak Ulikaram | Noor | [HTML](recipes/palak-ulikaram/palak-ulikaram.html) | [PDF](recipes/palak-ulikaram/palak-ulikaram.pdf) |
+
 *(This list grows as recipes are added.)*
 
 ## How it's made

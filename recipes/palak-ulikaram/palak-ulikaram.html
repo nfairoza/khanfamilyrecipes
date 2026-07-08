@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Palak Ulikaram — The Khan Family Cookbook</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Caveat:wght@500;700&display=swap');
+:root{ --ink:#241f1a; --soft:#7a7468; --paper:#ffffff; }
+*{box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
+  font-family:'Source Serif 4', Georgia, serif; font-size:10.5pt; line-height:1.5;}
+@page{ size:Letter; margin:0; }
+.page{position:relative; width:8.5in; height:11in; margin:0.25in auto; overflow:hidden;
+  background:var(--paper); padding:0.7in 0.7in 0.7in 1.15in; page-break-after:always;
+  box-shadow:0 2px 14px rgba(0,0,0,.12);}
+.holes{position:absolute; left:0.45in; top:0; bottom:0; width:0; z-index:9;}
+.holes i{position:absolute; left:-0.14in; width:0.28in; height:0.28in; border-radius:50%;
+  background:#efece7; box-shadow:inset 0 1px 3px rgba(0,0,0,.18);}
+.holes i:nth-child(1){top:1.15in} .holes i:nth-child(2){top:5.36in} .holes i:nth-child(3){top:9.57in}
+@media print{ .holes{display:none} body{background:#fff} .page{margin:0; box-shadow:none} }
+.chips{display:flex; gap:.08in; margin-bottom:.14in;}
+.chip{background:var(--accent); color:#fff; font-family:'Fraunces',serif; font-weight:600;
+  font-size:8pt; letter-spacing:1.5px; text-transform:uppercase; padding:.05in .14in; border-radius:999px;}
+.chip.ghost{background:var(--accent-soft); color:var(--accent);}
+.rhead h2{font-family:'Fraunces',serif; font-weight:900; font-size:27pt; margin:0; line-height:1.1;}
+.rhead h2 em{font-style:italic; font-weight:600; color:var(--accent);}
+.rhead .rule{height:0; border-top:2.5px solid var(--accent); border-bottom:1px solid var(--accent);
+  padding-top:2px; margin:.1in 0 .08in;}
+.rhead .attrib{font-family:'Caveat',cursive; font-size:16pt; color:var(--accent); margin:0 0 .04in;}
+.rhead .yield{font-size:8.5pt; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--accent); font-weight:600; margin:0 0 .14in;}
+.headnote{font-style:italic; color:var(--ink); font-size:10.5pt; line-height:1.55; margin:0 0 .18in; max-width:6.1in;}
+.headnote b{font-style:italic; color:var(--accent);}
+.hero{margin:0 0 .18in;}
+.hero .placeholder{width:100%; height:2.3in; border:2.5px dashed var(--accent-2);
+  border-radius:14px; background:var(--accent-soft); display:flex; align-items:center;
+  justify-content:center; color:var(--soft); font-family:'Caveat',cursive; font-size:16pt;}
+.hero figcaption{font-family:'Caveat',cursive; font-size:13pt; color:var(--soft); text-align:center; margin-top:.06in;}
+.ingredients{background:var(--accent-soft); border-radius:14px; padding:.24in .3in;}
+.ingredients h3{font-family:'Fraunces',serif; margin:0 0 .1in; font-size:11pt;
+  font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:2px;}
+.ingredients h4{font-family:'Fraunces',serif; margin:.06in 0 .06in; font-size:9pt;
+  font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:1.5px;}
+.ing-cols{display:grid; grid-template-columns:1fr 1fr; gap:.1in .4in;}
+.ingredients ul{margin:0 0 .04in; padding-left:.2in;}
+.ingredients li{margin:.055in 0;}
+.ingredients .foot{margin-top:.1in; font-size:9.5pt; color:var(--soft); font-style:italic; line-height:1.45;}
+/* continuation sheet */
+.cont-strip{background:linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius:12px; padding:.12in .24in; color:#fff; margin-bottom:.24in;
+  display:flex; align-items:baseline; justify-content:space-between;}
+.cont-strip h2{font-family:'Fraunces',serif; font-weight:600; font-size:12pt;
+  letter-spacing:2px; text-transform:uppercase; margin:0;}
+.cont-strip span{font-family:'Caveat',cursive; font-size:13pt;}
+.method h3{font-family:'Fraunces',serif; margin:0 0 .12in; font-size:11pt;
+  font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:2px;}
+.method ol{margin:0; padding:0; list-style:none; counter-reset:step;}
+.method li{counter-increment:step; position:relative; padding-left:.42in; margin:0 0 .16in;}
+.method li::before{content:counter(step); position:absolute; left:0; top:.01in;
+  width:.3in; height:.3in; border-radius:50%; background:var(--accent); color:#fff;
+  font-family:'Fraunces',serif; font-weight:600; font-size:10pt;
+  display:flex; align-items:center; justify-content:center;}
+.note{border:2px solid var(--accent-2); border-radius:12px; background:#fff;
+  padding:.14in .22in; margin-top:.22in; font-size:10.5pt;}
+.note b{font-family:'Fraunces',serif; color:var(--accent);}
+.folio{position:absolute; left:1.15in; bottom:.42in; color:var(--soft); font-size:8.5pt;
+  font-style:italic; letter-spacing:.5px;}
+.pageno{position:absolute; right:.55in; bottom:.42in; color:var(--soft);
+  font-family:'Fraunces',serif; font-size:9pt;}
+</style>
+</head>
+<body>
+
+<!-- ===== SHEET 1 · presentation ===== -->
+<section class="page recipe" style="--accent:#ff5a4d; --accent-2:#ff8d7a; --accent-soft:#ffe4df;">
+  <div class="holes"><i></i><i></i><i></i></div>
+
+  <div class="chips"><span class="chip">Salans</span><span class="chip ghost">Andhra</span></div>
+
+  <div class="rhead">
+    <h2>Palak <em>Ulikaram</em></h2>
+    <div class="rule"></div>
+    <p class="attrib">from the kitchen of Noor</p>
+    <p class="yield">A big bowl for the family · a lazy, tangy afternoon dish</p>
+  </div>
+
+  <p class="headnote"><b>Spinach cooked down with a tangy, garlicky Andhra masala</b> —
+  roasted chilies and coriander ground with tamarind and a whole lot of garlic, then
+  simmered into the greens until the oil comes shining back to the top. Eat it with hot
+  white rice and a spoon of ghee, and don't count the garlic cloves.</p>
+
+  <figure class="hero">
+    <div class="placeholder">a photo of the palak ulikaram goes here ✦</div>
+    <figcaption>dark, glossy, and ready for rice</figcaption>
+  </figure>
+
+  <aside class="ingredients">
+    <h3>What you'll need</h3>
+    <div class="ing-cols">
+      <div>
+        <h4>For the ground masala</h4>
+        <ul>
+          <li>1 big onion, roughly chopped</li>
+          <li>a whole lot of garlic — a fistful of cloves</li>
+          <li>a lime-sized ball of tamarind</li>
+          <li>a good handful of dried red chilies</li>
+          <li>2–3 spoons whole coriander seeds (dhania)</li>
+          <li>a spoon of cumin (zira)</li>
+          <li>salt, to taste</li>
+        </ul>
+      </div>
+      <div>
+        <h4>For the tempering &amp; greens</h4>
+        <ul>
+          <li>oil, a generous pour</li>
+          <li>mustard seeds &amp; cumin (zira)</li>
+          <li>chana dal &amp; urad dal, a spoon each</li>
+          <li>a sprig of curry leaves</li>
+          <li>a pinch of asafoetida (hing)</li>
+          <li>red chili powder, to your bravery</li>
+          <li>turmeric (haldi), a good pinch</li>
+          <li>lots &amp; lots of spinach, finely chopped</li>
+          <li>chopped coriander leaves, to finish</li>
+          <li>ghee, for serving</li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot">Amounts are by feel — start with more garlic and chili than seems wise, then taste as you go.</p>
+  </aside>
+
+  <div class="folio">The Khan Family Cookbook · Salans · 1 of 2</div>
+  <div class="pageno">Palak Ulikaram</div>
+</section>
+
+<!-- ===== SHEET 2 · method ===== -->
+<section class="page recipe" style="--accent:#ff5a4d; --accent-2:#ff8d7a; --accent-soft:#ffe4df;">
+  <div class="holes"><i></i><i></i><i></i></div>
+  <div class="cont-strip"><h2>Palak Ulikaram</h2><span>continued…</span></div>
+
+  <div class="method">
+    <h3>How we make it</h3>
+    <ol>
+      <li><b>Roast the whole spices.</b> Lightly dry-sauté the dried red chilies, coriander seeds and cumin in a pan until they smell warm and toasty — just fragrant, don't burn them.</li>
+      <li><b>Grind the masala.</b> Into the blender goes the onion, all that garlic, the tamarind, salt and your roasted chilies, coriander and cumin. Blend to a coarse paste — some texture is good.</li>
+      <li><b>Start the tempering.</b> Heat a generous pour of oil until hot. Add mustard seeds, cumin, chana dal, urad dal and the curry leaves — let it splutter and the dals turn golden. Add a pinch of asafoetida.</li>
+      <li><b>Fry the paste.</b> Tip in the ground masala and fry for a few minutes, stirring, until it darkens and the oil separates out at the edges.</li>
+      <li><b>Spice it.</b> Add red chili powder, turmeric and a little more salt if it needs it. Give it a stir.</li>
+      <li><b>Cook down the spinach.</b> Now add lots and lots of chopped spinach. Cook it and cook it and cook it — until all the water has gone and the oil separates again. That's how you know.</li>
+      <li><b>Finish.</b> Stir through chopped coriander leaves. Serve with hot white rice and a spoon of ghee.</li>
+    </ol>
+  </div>
+
+  <div class="note"><b>Amma's note:</b> the whole secret is patience at the end — keep cooking the spinach until the oil comes back. Rushing it leaves it watery. And really, add more garlic than you think.</div>
+
+  <div class="folio">The Khan Family Cookbook · Salans · 2 of 2</div>
+  <div class="pageno">Palak Ulikaram</div>
+</section>
+
+</body>
+</html>
