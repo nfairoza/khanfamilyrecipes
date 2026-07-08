@@ -1,106 +1,245 @@
 ---
 name: khan-family-cookbook
-description: Build the Khan Family Cookbook — turn pasted/uploaded recipes into a bright, happy heirloom recipe book. Use when adding recipes, regenerating the cookbook, or producing print-ready pages. Auto-categorizes recipes into colored sections, handles Noor's ancestral voice vs Yahya's precise voice, builds hero/polaroid-collage/full-page photo layouts, outputs HTML + print-ready PDF, maintains a README table of contents, and prepares files to push to github.com/nfairoza/khanfamilyrecipes.
+description: >-
+  Build "The Khan Family Cookbook" — the bright, sunny, heirloom recipe book for Noor
+  and Yahya Khan. Turns pasted or uploaded recipes into designed cookbook pages
+  (cover, colored section dividers with edge tabs, gradient-banner recipe pages,
+  polaroid collages, full-page photo "moments") and outputs BOTH self-contained HTML
+  and a print-ready US Letter PDF with a 3-ring-binder margin, then updates the
+  README table of contents and preps files for github.com/nfairoza/khanfamilyrecipes.
+  Use this skill whenever the user wants to add, format, or re-run a recipe for the
+  family book; says "put this in our book / book style"; mentions the Khan cookbook,
+  biryani/salan/tandoor sections, Noor's or Yahya's recipes, polaroid pages, or
+  printing the cookbook — even if they just paste a recipe with no other instruction.
+  Also use it to regenerate the whole book, rebuild the PDF, or update the README/TOC.
 ---
 
-# Khan Family Cookbook
+# The Khan Family Cookbook
 
-Build "The Khan Family Cookbook" — a bright, happy, heirloom recipe book for Noor and Yahya Khan and future generations. Each run takes one or more recipes and produces designed cookbook pages as **both HTML and a print-ready PDF**.
+A bright, happy heirloom cookbook for Noor & Yahya Khan and future generations.
+Every run takes one or more recipes and produces designed pages as **both HTML and a
+print-ready PDF**, plus an updated README table of contents.
 
-Default output folder: `C:\Documents\khanfamilyrecipes` (or the current working directory if that path does not exist — this skill is meant to be reusable from any machine or Claude account).
+**The design is APPROVED and encoded in `assets/templates.html`. Copy its markup and
+CSS — do not redesign from memory.** Noor explicitly rejected muted/cream looks: the
+base is pure white `#ffffff` with saturated marigold/coral/turquoise/green/pink
+accents. If a page starts looking calm, beige, or tasteful-neutral, it's wrong.
 
-This skill encodes an APPROVED design. Match it exactly. Do not drift toward muted/cream looks — the cream/dull look was explicitly rejected. The book must feel bright, sunny, and happy.
+## Where files go
 
-## What to do each run
+- **On Noor's machine** (Cowork / Claude Desktop / Claude Code with access to her
+  filesystem): everything lives in `C:\Documents\khanfamilyrecipes`. Present results
+  with `computer://` links.
+- **In the claude.ai web container**: that path doesn't exist. Work in
+  `/home/claude/khanfamilyrecipes`, copy final HTML + PDF + README to
+  `/mnt/user-data/outputs/`, present them, and remind Noor to drop them into
+  `C:\Documents\khanfamilyrecipes` locally.
 
-1. **Collect recipes.** The user pastes or uploads them. Each recipe may be tagged as Noor's or Yahya's. If untagged, infer from style (loose/sensory = Noor, precise measurements = Yahya) and confirm.
-2. **Auto-categorize, then show and confirm.** Decide each recipe's section from its title + ingredients. Print a short list like "Chicken Dum Biryani -> Biryani; Mutton Salan -> Salans" and let the user override any with one word before building. Create new categories on the fly when needed and assign each a palette color (see below).
-3. **Write in the right voice** (see Voices).
-4. **Lay out photos** using one or more of the three layouts (hero, polaroid collage, full-page). Auto-draft captions from filename + nearby recipe context; the user edits the ones they care about.
-5. **Generate HTML**, then render to **PDF**.
-6. **Save both** to the output folder and present with links.
-7. **Update the README** table of contents.
+## Workflow (every run)
 
-**Per-recipe deliverables (default):** When the user adds a NEW recipe, produce a **standalone PDF for just that recipe** (its own `recipe-<name>.html` + `.pdf`), not a rebuild of the whole book. The user prints one recipe at a time and files it into a physical 1-inch 3-ring binder. Use the same design spec so it drops in seamlessly. Still update `index.html` (the combined live GitHub Pages site) and the README TOC, but the thing you hand over for printing is the single-recipe PDF. A recipe may span multiple pages — that's fine.
-8. **Offer GitHub publish** steps (prepare files + give push commands; do not assume credentials).
+1. **Collect recipes.** Noor pastes or uploads them. There is no Gmail connector —
+   if asked to pull from Gmail, say that needs a Gmail integration that isn't
+   connected, and ask her to paste instead.
 
-## Design spec (APPROVED — "Fresh & sunny", brightened)
+2. **Attribute the cook.** Each recipe may be tagged Noor's or Yahya's. If untagged,
+   infer from style (loose/sensory → Noor; precise measurements → Yahya) and
+   **confirm before building** — one short line, not a questionnaire.
 
-- **Base:** white paper `#ffffff` (NEVER cream — cream reads dull).
-- **Palette:** marigold `#ff8a00` / `#ffb400`, coral `#ff5a4d`, turquoise `#13c4c4`, leaf green `#5fc23b`, pink `#ff7eb6`. Ink `#241f1a`, soft ink `#7a7468`.
-- **Cover:** multi-radial sunny gradient, rainbow conic-gradient "plate" circle with a centered food emoji/photo, scattered confetti dots, title "The Khan Family & Cookbook" (the `&` in italic coral), subtitle "recipes, memories & a little chaos in the kitchen", "A collection by Noor & Yahya Khan".
-- **Recipe pages:** bold gradient **title banner** (accent -> accent-2) with white text and a white category chip; white-bordered **hero photo** with rounded corners; two columns — tinted **ingredients box** (accent-soft bg) on the left, **method** with colored step numbers on the right; a bordered **note** box for the "Amma's note / Yahya's note" line.
-- **Signatures:** subtle, bottom-right, italic "from the kitchen of **Noor**/**Yahya**" with the name in a script font in the accent color. Keep it light, not loud.
-- **Folio:** bottom-left small label "The Khan Family Cookbook · <Category>".
-- **Section dividers:** full accent-gradient background, white rounded card with a big emoji, the category name, a rule, and a one-line blurb. An **edge tab** (white pill on the right edge) names the section and acts as the physical folder divider. **Do NOT number sections.**
+3. **Auto-categorize, show, confirm.** Decide each recipe's section from title +
+   ingredients using `references/categories.md`. Print a short mapping —
+   `Chicken Dum Biryani → Biryani; Mutton Salan → Salans` — and let Noor override
+   any with one word. If a recipe needs a new category, create it, assign the next
+   free palette hue, and **record it in `references/categories.md`** so the color is
+   stable across runs.
 
-### Per-category color shift
-Each category keeps the family look but shifts accent color. Suggested mapping (extend as needed, keep within the palette):
-- Biryani -> orange `--accent:#ff7a00; --accent-2:#ffc233; --accent-soft:#fff1d8`
-- Breads & Bakes -> teal `--accent:#0aa6a6; --accent-2:#6ee0d6; --accent-soft:#e2fbf8`
-- Rice -> marigold `#ffb400`
-- Salans (curries) -> coral `#ff5a4d`
-- Tandoori & BBQ -> deep red/ember `#e23d2e`
-- Soups & Broths -> green `#5fc23b`
-- Sandwiches & Snacks -> pink `#ff7eb6`
-- Regional (Hyderabadi/Andhra/Korean/Chinese) -> pick an unused palette hue and stay consistent.
-Assign new categories the next free hue. Record assignments so a category always gets the same color across runs.
+4. **Write in the right voice.** Read `references/voices.md` first — it defines how
+   each cook's quantities, doneness cues, and notes are written, with examples.
+   Never fabricate precision: converting Noor's "a good amount" into grams is
+   estimation, so either confirm with her or mark converted values as approximate.
 
-## Voices
+5. **Design the photo pages — fresh per recipe.** Photos are laid out from a
+   *design vocabulary*, not fixed templates. Read the "Photo pages" section below,
+   pick or invent a motif that fits the dish and the photo count, and compose it.
+   **Auto-draft every caption.** Whenever the image is actually viewable — shared
+   in chat, or readable from the recipe's `photos/` folder on Noor's machine —
+   open it and caption from what's really in the photo, in the book's warm
+   handwritten tone ("first scoop", "everyone waiting"). Only when the file can't
+   be viewed, fall back to filename + nearby step context and never describe
+   contents you haven't seen. Present all drafts in a short list for Noor to edit;
+   use any caption she gives verbatim.
 
-- **Noor (ancestral / touch-and-feel):** loose, sensory, warm. "a good amount", "to your family's bravery", "cook until the kitchen smells unbearable in the best way", "you will know", "add extra ghee for whoever you love most". Convert precise measures to feel-based phrasing.
-- **Yahya (precise):** exact cups + grams, F (C), explicit times, internal temps, "in 3 additions", "no less", "measured, not guessed". Keep it confident and exact.
+6. **Build ONLY the new recipe's pages — never regenerate existing files.** Each
+   recipe gets its own self-contained folder, named by slug:
+   `recipes/chicken-dum-biryani/` containing `chicken-dum-biryani.html`,
+   `chicken-dum-biryani.pdf`, and a `photos/` subfolder for its images. Copy the
+   blocks you need from `assets/templates.html` (recipe page, plus collage /
+   full-page photo pages if warranted — extra pages go in the same HTML file),
+   swap the CSS variables to the category's colors, inline the CSS, and embed
+   photos as base64 `data:` URIs or reference them relatively (`photos/…`).
+   Existing recipe folders are finished — do not touch them unless Noor asks to
+   edit that specific recipe (then regenerate just that folder's files).
 
-Each recipe gets one signature matching its author.
+   **Page budget:** a `.page` is fixed-height and clips overflow — never let
+   content get cut off. Priority order on sheet 1: chips → title/rule/attribution/
+   yield → headnote → hero → ingredients + method → note box. The **taped original
+   handwritten card** (`.original`) goes on sheet 1 only when the method is short;
+   otherwise move it to the collage page or give it its own second sheet — it's a
+   centerpiece, not a footnote. Long methods flow to a second sheet naturally
+   (duplicate the `.page` chassis); don't shrink type to cram.
 
-## Three photo layouts
+   If the recipe opens a **new category**, also generate that category's divider
+   page once: `dividers/<category>.html` + `.pdf`, and record the color in
+   `references/categories.md`.
 
-1. **Hero** — single photo on the recipe page, white border, rounded.
-2. **Polaroid collage page** — scattered polaroids with varying tilt, size, and orientation, colored tape on top, handwritten-style captions. Insta/polaroid happy feel. Vary rotation and overlap so it looks casual.
-3. **Full-page photo** — full-bleed single photo filling the whole letter page, soft dark gradient at the bottom, white title + a short memory caption.
+7. **Render each new PDF.** On Noor's Windows machine, use **headless Chrome
+   "Print to PDF"** — WeasyPrint's native GTK libraries fail to load on Windows,
+   and Chrome is also the highest-fidelity path (renders color emoji and CSS
+   transforms exactly like the browser). Use absolute Windows paths:
 
-Pick per recipe based on how many photos exist: 1 photo = hero only; 2-3 = hero + maybe a full-page; 4+ = hero + collage. Offer a full-page "moment" page for standout dishes.
+   ```bash
+   "/c/Program Files/Google/Chrome/Application/chrome.exe" --headless --disable-gpu \
+     --no-pdf-header-footer \
+     --print-to-pdf="C:\Documents\khanfamilyrecipes\recipes\chicken-dum-biryani\chicken-dum-biryani.pdf" \
+     "C:\Documents\khanfamilyrecipes\recipes\chicken-dum-biryani\chicken-dum-biryani.html"
+   ```
 
-### Captions
-Auto-draft a caption for every photo from its filename and the nearby recipe/step context (e.g. `biryani-layering.jpg` near the dum step -> "layering the dum"). Present drafts; the user edits the few they want. Use any caption they provide verbatim. Only describe actual image contents for photos shared directly in the chat.
+   Fallback (Linux / claude.ai web container, where Chrome isn't present):
+   WeasyPrint — `pip install weasyprint pypdf --break-system-packages -q` then
+   `python3 -c "from weasyprint import HTML; HTML('in.html').write_pdf('out.pdf')"`
+   (note: no color emoji, some transforms differ from a browser).
 
-## Print / output requirements
+   Verify with pypdf that the page count matches and pages are 8.5×11in (612×792pt).
 
-- **US Letter, 8.5in x 11in.** `@page { size: Letter; margin: 0 }`.
-- **Binder margin:** extra left padding ~`1.15in` for 3-hole punch + reinforcement labels; other margins ~`0.7in`. Cardstock, 3-ring binder.
-- Use `print-color-adjust: exact` so the bright colors print.
-- One `.page` per physical page, `page-break-after: always`.
-- Onscreen, show faint binder holes; hide them in print.
-- Keep the HTML **self-contained** (inline CSS, embed photos as base64 or reference local files kept alongside).
+8. **Add the recipe to the index — don't rebuild it from scratch.**
+   - `index.html`: the book's landing page/table of contents in the house style —
+     cover header, then categories in registry order, each recipe a row (title,
+     author, links to its HTML and PDF). Insert the new row under its category;
+     create the category heading if it's new.
+   - `README.md`: mirror of the same TOC in markdown. Insert the same row.
+   Since Noor prints on cardstock for a 3-ring binder, new sheets just get punched
+   and filed behind the right divider tab — no full-book reprint needed.
 
-### Rendering the PDF
-Preferred on Windows: **headless Chrome "Print to PDF"** (highest fidelity, and WeasyPrint's native GTK libs often fail to load on Windows). Use absolute Windows paths:
+9. **Full-book rebuild is on-demand only.** When Noor asks to "regenerate the
+   whole book" or wants one combined PDF, concatenate cover → per-category
+   (divider + its recipes) into `khan-family-cookbook.html`/`.pdf`. Never do this
+   automatically on a normal add-a-recipe run.
+
+10. **Present + offer GitHub publish.** Present just the new/changed files (recipe
+    HTML + PDF, index, README, any new divider). Then give exact push commands
+    (see GitHub section). Never assume credentials.
+
+## Design spec (v2 "bright heirloom editorial" — the template is the source of truth)
+
+- **Base:** white `#ffffff`. NEVER cream.
+- **Palette:** marigold `#ff8a00`/`#ffb400`, coral `#ff5a4d`, turquoise `#13c4c4`,
+  leaf `#5fc23b`, pink `#ff7eb6`. Ink `#241f1a`, soft ink `#7a7468`.
+- **Type system:** Fraunces (serif display, weights 600/900) for titles and
+  headings; Source Serif 4 for body; Caveat for script (attribution, captions).
+  Elegant heirloom serif — no rounded/playful display type.
+- **Cover:** sunny multi-radial wash, rainbow conic ring "plate" holding a 2×2
+  **photo-wedge collage** (or one photo / emoji fallback), confetti dots, Fraunces
+  title with the & italic coral, Caveat script subtitle, byline.
+- **Recipe page (editorial header):** small category + region chips → Fraunces
+  title with the evocative word in italic accent (`Dum <em>Biryani</em>`) → thick+
+  thin **double rule** in accent → Caveat attribution "from the kitchen of Noor" →
+  small-caps accent **yield line** ("Feeds a full table · Sunday project") →
+  italic **headnote**: a 2–3 sentence real memory, lead-in words bold accent. Ask
+  Noor for the memory or draw it from what she's said — never invent one; skip the
+  headnote if there isn't one. Then hero photo (classic rounded or **arch crop**),
+  two columns (tinted ingredients box, colored step numbers), optional **taped-in
+  scan of the original handwritten recipe card** with a Caveat caption (the
+  heirloom centerpiece — always offer it when a scan/photo of the original
+  exists), note box, italic folio bottom-left, Fraunces page number bottom-right.
+- **Section dividers:** full accent-gradient background, white rounded card with a
+  circular photo (or emoji) medallion + Fraunces name + gradient rule + italic
+  blurb, white pill **edge tab** on the right edge. **No section numbers.**
+- **Photo pages — a vocabulary, not templates.** Every recipe's photo page is
+  composed fresh so no two recipes look stamped from the same mold. **House
+  constants (always):** white photo frames or polaroid borders, Caveat captions,
+  colored tape/pins in the palette, the category accent doing the decorating, page
+  chassis with binder margin, folio. **The motif (varies per recipe)** — pick or
+  invent one that matches the dish's personality and photo count:
+  - *scattered polaroids* — tilted, overlapping, taped; for chaotic happy days
+  - *circle plate* — a big ring holding photo wedges/semicircles (like the cover);
+    for feasts and spreads
+  - *arch / dome windows* — one or three arched photos in a row; for breads,
+    bakes, anything oven-and-patience
+  - *film strip* — a neat vertical or horizontal strip of process shots; for
+    step-driven recipes (layering, folding, shaping)
+  - *scrapbook* — one big taped photo + torn-paper edges + small snapshots
+    tucked around it; for recipes with an original handwritten card
+  - *big & little* — one large anchor photo with 2–3 small ones stacked beside;
+    the classic editorial spread
+  - *facing spread* — a full-bleed "moment" page ordered so it sits opposite the
+    collage when the binder is open (moment on the left sheet, collage on the
+    right)
+  Vary the motif from the previous recipe unless Noor asks for consistency; state
+  which motif was chosen and why in one line when presenting. Photo count guide:
+  1 = hero only; 2–3 = hero + big & little or a facing moment; 4+ = hero + a full
+  collage page. `assets/templates.html` includes starter markup for several
+  motifs — treat them as ingredients, not the finished dish.
+- **Print:** US Letter, `@page { size: Letter; margin: 0 }`, left padding ~1.15in
+  for the 3-hole punch, other margins ~0.7in, `print-color-adjust: exact`, one
+  `.page` per sheet with `page-break-after: always`. Faint binder holes onscreen,
+  hidden in print.
+
+Category → color assignments live in `references/categories.md` (the registry).
+
+## Folder layout (keep it exactly like this)
+
 ```
-"/c/Program Files/Google/Chrome/Application/chrome.exe" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf="C:\path\out.pdf" "C:\path\in.html"
+khanfamilyrecipes/
+├── index.html                  ← TOC landing page (also works for GitHub Pages)
+├── README.md                   ← markdown mirror of the TOC
+├── cover.html / cover.pdf      ← generated once, reused
+├── dividers/
+│   └── biryani.html/.pdf       ← one per category, generated when category first appears
+├── recipes/
+│   ├── chicken-dum-biryani/    ← ONE FOLDER PER RECIPE, self-contained
+│   │   ├── chicken-dum-biryani.html
+│   │   ├── chicken-dum-biryani.pdf
+│   │   └── photos/             ← this recipe's photos (when not base64-embedded)
+│   └── mutton-salan/
+│       ├── mutton-salan.html
+│       └── mutton-salan.pdf
+└── khan-family-cookbook.pdf    ← combined book, rebuilt only on request
 ```
-Fallback (Linux/sandbox): WeasyPrint — `python3 -c "from weasyprint import HTML; HTML('in.html').write_pdf('out.pdf')"` (install `pip install weasyprint --break-system-packages -q`). Verify page count and 8.5x11 size with pypdf.
 
-Note: WeasyPrint does not render emoji in color and handles some transforms differently than a browser. For the real book with actual photos this is fine. For pixel-perfect rotation/shadows, opening the HTML in a browser and using "Print to PDF" is the highest-fidelity path; mention this option.
-
-## README / table of contents
-
-Maintain `README.md` in the output folder with: a short intro, a table of contents listing each category and the recipes under it (with the author), and links to the HTML and PDF. Update it every run.
+A recipe's folder is its complete unit — page, print file, and photos together —
+so it can be re-printed, edited, or removed without touching anything else. Other
+runs never modify existing recipe folders.
 
 ## GitHub publishing
 
-Repo: `github.com/nfairoza/khanfamilyrecipes`. The user pushes themselves (no credentials assumed). Prepare all files, then give exact commands:
+Repo: `github.com/nfairoza/khanfamilyrecipes`. Noor pushes herself — no credentials
+in this environment. Prepare all files in the folder, then give her exact commands:
+
 ```
 cd C:\Documents\khanfamilyrecipes
 git add .
 git commit -m "Update Khan Family Cookbook"
 git push
 ```
-If the repo isn't cloned yet, give clone/init + remote-add steps first. The cookbook HTML is named `index.html` so GitHub Pages can serve it as a live page (enable Pages on the `main` branch in repo settings).
 
-## Reusing this skill from another Claude account
-
-This skill lives in the repo at `skills/khan-family-cookbook/`. To reuse it elsewhere: clone the repo, then either zip `skills/khan-family-cookbook` as `khan-family-cookbook.skill` and install it, or copy the folder into the target's skills directory. The full design spec above is self-contained, so the skill reproduces the approved look anywhere.
+If the repo isn't cloned yet, give clone/init + remote-add steps first. Offer to
+include the PDF. To publish the HTML as a viewable page, suggest enabling GitHub
+Pages and naming (or copying) the main file to `index.html`.
 
 ## Self-check before delivering
 
-White base (not cream), bright saturated accents, gradient title banners, per-category color + edge tab, no numbered sections, both author voices correct, subtle signatures, three photo layouts available, captions drafted, US Letter with binder margin, BOTH HTML and PDF saved, README TOC updated, GitHub steps offered. Present files with links and a short summary.
+☐ White base, saturated accents, gradient banners ☐ correct category color + edge
+tab, no numbered sections ☐ voice matches the cook, no invented precision ☐ subtle
+signature + folio on every recipe page ☐ right photo layout for the photo count,
+captions drafted ☐ Letter size with binder margin, verified with pypdf ☐ new recipe
+saved in its own folder under `recipes/` (HTML + PDF + photos), existing folders untouched
+☐ index.html and README TOC updated with the new row ☐ GitHub steps offered
+☐ presented with links + a short summary.
+
+## Files
+
+- `assets/templates.html` — the approved design: cover, divider, recipe page,
+  polaroid collage, full-page photo, all CSS variables. Copy from here.
+- `references/categories.md` — auto-sort rules + the persistent category→color
+  registry. **Update it whenever a new category is created.**
+- `references/voices.md` — Noor's *feel* voice vs Yahya's *measure* voice, with
+  examples and the no-fabricated-precision rule.
