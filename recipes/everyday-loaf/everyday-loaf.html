@@ -29,33 +29,40 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
 .rhead .attrib{font-family:'Caveat',cursive; font-size:16pt; color:var(--accent); margin:0 0 .04in;}
 .rhead .yield{font-size:8.5pt; letter-spacing:2.5px; text-transform:uppercase;
   color:var(--accent); font-weight:600; margin:0 0 .14in;}
-.headnote{font-style:italic; color:var(--ink); font-size:10.5pt; line-height:1.5; margin:0 0 .14in; max-width:6.1in;}
+.headnote{font-style:italic; color:var(--ink); font-size:11pt; line-height:1.6; margin:0 0 .28in; max-width:6.1in;}
 .headnote b{font-style:italic; color:var(--accent);}
-.hero{margin:0 0 .14in;}
-.hero .placeholder{width:100%; height:0.85in; border:2.5px dashed var(--accent-2);
+.hero{margin:0 0 .28in;}
+.hero .placeholder{width:100%; height:3.2in; border:2.5px dashed var(--accent-2);
   border-radius:14px; background:var(--accent-soft); display:flex; align-items:center;
-  justify-content:center; color:var(--soft); font-family:'Caveat',cursive; font-size:14pt;}
-.hero figcaption{font-family:'Caveat',cursive; font-size:13pt; color:var(--soft); text-align:center; margin-top:.05in;}
-.cols{display:grid; grid-template-columns:2.6in 1fr; gap:.28in;}
-.ingredients{background:var(--accent-soft); border-radius:14px; padding:.2in;}
-.ingredients h3, .method h3{font-family:'Fraunces',serif; margin:0 0 .1in; font-size:10.5pt;
+  justify-content:center; color:var(--soft); font-family:'Caveat',cursive; font-size:16pt;}
+.hero figcaption{font-family:'Caveat',cursive; font-size:13pt; color:var(--soft); text-align:center; margin-top:.06in;}
+.ingredients{background:var(--accent-soft); border-radius:14px; padding:.24in .3in;}
+.ingredients h3, .method h3{font-family:'Fraunces',serif; margin:0 0 .12in; font-size:11pt;
   font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:2px;}
-.ingredients ul{margin:0; padding:0; list-style:none;}
-.ingredients li{margin:.055in 0; display:flex; justify-content:space-between; gap:.1in;
-  border-bottom:1px dashed var(--accent-2); padding-bottom:.045in; font-size:10pt;}
-.ingredients li:last-child{border-bottom:none;}
+.ingredients ul{margin:0; padding:0; list-style:none; column-count:2; column-gap:.4in;}
+.ingredients li{margin:.07in 0; display:flex; justify-content:space-between; gap:.14in;
+  border-bottom:1px dashed var(--accent-2); padding-bottom:.06in; break-inside:avoid;}
 .ingredients li .amt{color:var(--accent); font-weight:600; white-space:nowrap;}
-.ingredients .total{margin-top:.08in; padding-top:.08in; border-top:2px solid var(--accent);
-  display:flex; justify-content:space-between; font-family:'Fraunces',serif; font-weight:600; font-size:9.5pt;}
-.ingredients .foot{margin-top:.1in; font-size:9pt; color:var(--soft); font-style:italic; line-height:1.4;}
+.ingredients .total{margin-top:.12in; padding-top:.1in; border-top:2px solid var(--accent);
+  display:flex; justify-content:space-between; font-family:'Fraunces',serif; font-weight:600; font-size:10.5pt;}
+.ingredients .foot{margin-top:.14in; font-size:9.5pt; color:var(--soft); font-style:italic; line-height:1.45;}
+/* continuation sheet */
+.cont-strip{background:linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius:12px; padding:.12in .24in; color:#fff; margin-bottom:.24in;
+  display:flex; align-items:baseline; justify-content:space-between;}
+.cont-strip h2{font-family:'Fraunces',serif; font-weight:600; font-size:12pt;
+  letter-spacing:2px; text-transform:uppercase; margin:0;}
+.cont-strip span{font-family:'Caveat',cursive; font-size:13pt;}
 .method ol{margin:0; padding:0; list-style:none; counter-reset:step;}
-.method li{counter-increment:step; position:relative; padding-left:.42in; margin:0 0 .075in;}
+.method.two-col ol{column-count:2; column-gap:.4in;}
+.method.two-col li{break-inside:avoid;}
+.method li{counter-increment:step; position:relative; padding-left:.42in; margin:0 0 .18in;}
 .method li::before{content:counter(step); position:absolute; left:0; top:.01in;
   width:.3in; height:.3in; border-radius:50%; background:var(--accent); color:#fff;
   font-family:'Fraunces',serif; font-weight:600; font-size:10pt;
   display:flex; align-items:center; justify-content:center;}
 .note{border:2px solid var(--accent-2); border-radius:12px; background:#fff;
-  padding:.11in .18in; margin-top:.12in; font-size:9.5pt;}
+  padding:.14in .22in; margin-top:.24in; font-size:10.5pt;}
 .note b{font-family:'Fraunces',serif; color:var(--accent);}
 .folio{position:absolute; left:1.15in; bottom:.42in; color:var(--soft); font-size:8.5pt;
   font-style:italic; letter-spacing:.5px;}
@@ -64,6 +71,8 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
 </style>
 </head>
 <body>
+
+<!-- ===== SHEET 1 · presentation ===== -->
 <section class="page recipe" style="--accent:#0aa6a6; --accent-2:#6ee0d6; --accent-soft:#e2fbf8;">
   <div class="holes"><i></i><i></i><i></i></div>
 
@@ -85,39 +94,48 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
     <figcaption>deep golden, cooled on a rack</figcaption>
   </figure>
 
-  <div class="cols">
-    <aside class="ingredients">
-      <h3>Formula · 1 loaf</h3>
-      <ul>
-        <li><span>Flour (AP or bread)</span><span class="amt">375 g · 100%</span></li>
-        <li><span>Water (warm)</span><span class="amt">240 g · 64%</span></li>
-        <li><span>Butter or Oil</span><span class="amt">14 g · 3.7%</span></li>
-        <li><span>Sugar (or Honey)</span><span class="amt">12 g · 3.2%</span></li>
-        <li><span>Salt</span><span class="amt">9 g · 2.4%</span></li>
-        <li><span>Active Dry Yeast</span><span class="amt">7 g · 1.9%</span></li>
-      </ul>
-      <div class="total"><span>Total Dough</span><span>657 g · 175.2%</span></div>
-      <p class="foot">Hydration = water ÷ flour × 100 = 64%. Aim for a final dough temp of 76–78°F (24–26°C) — adjust water temp to hit it.</p>
-    </aside>
-    <div class="method">
-      <h3>Method</h3>
-      <ol>
-        <li><b>Bloom the yeast.</b> Stir the yeast (7 g) and sugar (12 g) into the warm water (240 g). Rest 5–10 min until foamy.</li>
-        <li><b>Mix.</b> Combine flour (375 g) and salt (9 g). Add the yeast water and butter or oil (14 g). Mix to a rough, shaggy dough.</li>
-        <li><b>Knead.</b> 10 min by hand (or 6–7 min in a stand mixer on medium) until smooth and elastic — it should pass a windowpane test.</li>
-        <li><b>Bulk rise.</b> Cover and ferment ~1 hr at warm room temperature, until doubled.</li>
-        <li><b>Shape.</b> Gently degas, shape into a tight loaf, seam-side down in a greased 9×5 in pan (or free-form on a tray).</li>
-        <li><b>Proof.</b> Cover and proof 45–60 min, until the dough crowns ~1 in above the rim and springs back slowly when poked.</li>
-        <li><b>Bake.</b> 375°F (190°C) for 30–35 min, until deep golden and the internal temperature reads 200–205°F (93–96°C).</li>
-        <li><b>Cool.</b> Turn out and cool on a rack at least 1 hr before slicing — cutting hot bread gums the crumb.</li>
-      </ol>
-    </div>
+  <aside class="ingredients">
+    <h3>Formula · 1 loaf</h3>
+    <ul>
+      <li><span>Flour (AP or bread)</span><span class="amt">375 g · 100%</span></li>
+      <li><span>Water (warm)</span><span class="amt">240 g · 64%</span></li>
+      <li><span>Butter or Oil</span><span class="amt">14 g · 3.7%</span></li>
+      <li><span>Sugar (or Honey)</span><span class="amt">12 g · 3.2%</span></li>
+      <li><span>Salt</span><span class="amt">9 g · 2.4%</span></li>
+      <li><span>Active Dry Yeast</span><span class="amt">7 g · 1.9%</span></li>
+    </ul>
+    <div class="total"><span>Total Dough</span><span>657 g · 175.2%</span></div>
+    <p class="foot">Hydration = water ÷ flour × 100 = 64%. Aim for a final dough temp of 76–78°F (24–26°C) — adjust water temp to hit it.</p>
+  </aside>
+
+  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes · 1 of 2</div>
+  <div class="pageno">Everyday Loaf</div>
+</section>
+
+<!-- ===== SHEET 2 · method ===== -->
+<section class="page recipe" style="--accent:#0aa6a6; --accent-2:#6ee0d6; --accent-soft:#e2fbf8;">
+  <div class="holes"><i></i><i></i><i></i></div>
+  <div class="cont-strip"><h2>Everyday Loaf</h2><span>continued…</span></div>
+
+  <div class="method two-col">
+    <h3>Method</h3>
+    <ol>
+      <li><b>Bloom the yeast.</b> Stir the yeast (7 g) and sugar (12 g) into the warm water (240 g). Rest 5–10 min until foamy.</li>
+      <li><b>Mix.</b> Combine flour (375 g) and salt (9 g). Add the yeast water and butter or oil (14 g). Mix to a rough, shaggy dough.</li>
+      <li><b>Knead.</b> 10 min by hand (or 6–7 min in a stand mixer on medium) until smooth and elastic — it should pass a windowpane test.</li>
+      <li><b>Bulk rise.</b> Cover and ferment ~1 hr at warm room temperature, until doubled.</li>
+      <li><b>Shape.</b> Gently degas, shape into a tight loaf, seam-side down in a greased 9×5 in pan (or free-form on a tray).</li>
+      <li><b>Proof.</b> Cover and proof 45–60 min, until the dough crowns ~1 in above the rim and springs back slowly when poked.</li>
+      <li><b>Bake.</b> 375°F (190°C) for 30–35 min, until deep golden and the internal temperature reads 200–205°F (93–96°C).</li>
+      <li><b>Cool.</b> Turn out and cool on a rack at least 1 hr before slicing — cutting hot bread gums the crumb.</li>
+    </ol>
   </div>
 
   <div class="note"><b>Yahya's note:</b> the loaf is done when the thermometer says so, not when the timer rings. 64% hydration is forgiving — wetter for a more open crumb, drier for tidy sandwich slices, but weigh it either way.</div>
 
-  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes</div>
+  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes · 2 of 2</div>
   <div class="pageno">Everyday Loaf</div>
 </section>
+
 </body>
 </html>

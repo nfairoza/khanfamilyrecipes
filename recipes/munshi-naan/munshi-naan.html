@@ -29,32 +29,39 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
 .rhead .attrib{font-family:'Caveat',cursive; font-size:16pt; color:var(--accent); margin:0 0 .04in;}
 .rhead .yield{font-size:8.5pt; letter-spacing:2.5px; text-transform:uppercase;
   color:var(--accent); font-weight:600; margin:0 0 .14in;}
-.headnote{font-style:italic; color:var(--ink); font-size:10.5pt; line-height:1.5; margin:0 0 .14in; max-width:6.1in;}
+.headnote{font-style:italic; color:var(--ink); font-size:11pt; line-height:1.6; margin:0 0 .28in; max-width:6.1in;}
 .headnote b{font-style:italic; color:var(--accent);}
-.hero{margin:0 0 .14in;}
+.hero{margin:0 0 .28in;}
 .hero.arch img{height:3.2in; border-radius:2.4in 2.4in 14px 14px;}
-.hero .placeholder{width:100%; height:1.15in; border:2.5px dashed var(--accent-2);
-  border-radius:1.15in 1.15in 14px 14px; background:var(--accent-soft); display:flex; align-items:center;
-  justify-content:center; color:var(--soft); font-family:'Caveat',cursive; font-size:14pt;}
-.hero figcaption{font-family:'Caveat',cursive; font-size:13pt; color:var(--soft); text-align:center; margin-top:.05in;}
-.cols{display:grid; grid-template-columns:2.35in 1fr; gap:.28in;}
-.ingredients{background:var(--accent-soft); border-radius:14px; padding:.2in;}
-.ingredients h3, .method h3{font-family:'Fraunces',serif; margin:0 0 .1in; font-size:10.5pt;
+.hero .placeholder{width:100%; height:3.2in; border:2.5px dashed var(--accent-2);
+  border-radius:2.4in 2.4in 14px 14px; background:var(--accent-soft); display:flex; align-items:center;
+  justify-content:center; color:var(--soft); font-family:'Caveat',cursive; font-size:16pt;}
+.hero figcaption{font-family:'Caveat',cursive; font-size:13pt; color:var(--soft); text-align:center; margin-top:.06in;}
+.ingredients{background:var(--accent-soft); border-radius:14px; padding:.24in .3in;}
+.ingredients h3, .method h3{font-family:'Fraunces',serif; margin:0 0 .12in; font-size:11pt;
   font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:2px;}
-.ingredients ul{margin:0; padding:0; list-style:none;}
-.ingredients li{margin:.06in 0; display:flex; justify-content:space-between; gap:.1in;
-  border-bottom:1px dashed var(--accent-2); padding-bottom:.05in;}
-.ingredients li:last-child{border-bottom:none;}
+.ingredients ul{margin:0; padding:0; list-style:none; column-count:2; column-gap:.4in;}
+.ingredients li{margin:.07in 0; display:flex; justify-content:space-between; gap:.14in;
+  border-bottom:1px dashed var(--accent-2); padding-bottom:.06in; break-inside:avoid;}
 .ingredients li .amt{color:var(--accent); font-weight:600; white-space:nowrap;}
-.ingredients .foot{margin-top:.1in; font-size:9pt; color:var(--soft); font-style:italic; line-height:1.4;}
+.ingredients .foot{margin-top:.14in; font-size:9.5pt; color:var(--soft); font-style:italic; line-height:1.45;}
+/* continuation sheet */
+.cont-strip{background:linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius:12px; padding:.12in .24in; color:#fff; margin-bottom:.24in;
+  display:flex; align-items:baseline; justify-content:space-between;}
+.cont-strip h2{font-family:'Fraunces',serif; font-weight:600; font-size:12pt;
+  letter-spacing:2px; text-transform:uppercase; margin:0;}
+.cont-strip span{font-family:'Caveat',cursive; font-size:13pt;}
 .method ol{margin:0; padding:0; list-style:none; counter-reset:step;}
-.method li{counter-increment:step; position:relative; padding-left:.42in; margin:0 0 .075in;}
+.method.two-col ol{column-count:2; column-gap:.4in;}
+.method.two-col li{break-inside:avoid;}
+.method li{counter-increment:step; position:relative; padding-left:.42in; margin:0 0 .18in;}
 .method li::before{content:counter(step); position:absolute; left:0; top:.01in;
   width:.3in; height:.3in; border-radius:50%; background:var(--accent); color:#fff;
   font-family:'Fraunces',serif; font-weight:600; font-size:10pt;
   display:flex; align-items:center; justify-content:center;}
 .note{border:2px solid var(--accent-2); border-radius:12px; background:#fff;
-  padding:.11in .18in; margin-top:.12in; font-size:9.5pt;}
+  padding:.14in .22in; margin-top:.24in; font-size:10.5pt;}
 .note b{font-family:'Fraunces',serif; color:var(--accent);}
 .folio{position:absolute; left:1.15in; bottom:.42in; color:var(--soft); font-size:8.5pt;
   font-style:italic; letter-spacing:.5px;}
@@ -63,6 +70,8 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
 </style>
 </head>
 <body>
+
+<!-- ===== SHEET 1 · presentation ===== -->
 <section class="page recipe" style="--accent:#0aa6a6; --accent-2:#6ee0d6; --accent-soft:#e2fbf8;">
   <div class="holes"><i></i><i></i><i></i></div>
 
@@ -85,39 +94,48 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
     <figcaption>fresh off the tava</figcaption>
   </figure>
 
-  <div class="cols">
-    <aside class="ingredients">
-      <h3>Ingredients</h3>
-      <ul>
-        <li><span>All-Purpose Flour</span><span class="amt">240 g</span></li>
-        <li><span>Active Dry Yeast (Khamir)</span><span class="amt">3 g</span></li>
-        <li><span>Sugar</span><span class="amt">4 g</span></li>
-        <li><span>Warm Milk (or water)</span><span class="amt">120 g</span></li>
-        <li><span>Salt</span><span class="amt">4.5 g</span></li>
-        <li><span>Plain Yogurt</span><span class="amt">30 g</span></li>
-        <li><span>Ghee (or melted butter)</span><span class="amt">14 g</span></li>
-      </ul>
-      <p class="foot">Milk warm, not hot — ~105°F (40°C). Above 115°F (46°C) kills the yeast.</p>
-    </aside>
-    <div class="method">
-      <h3>Method</h3>
-      <ol>
-        <li><b>Bloom the yeast.</b> Stir the yeast and sugar into the warm milk (120 g, ~105°F / 40°C). Stand 5–10 min until foamy. No foam means dead yeast — start over.</li>
-        <li><b>Mix.</b> Combine flour (240 g) and salt (4.5 g). Add the yogurt (30 g), ghee (14 g) and the yeast milk. Mix to a shaggy dough.</li>
-        <li><b>Knead.</b> 8–10 min by hand (or 5 min in a stand mixer on medium) until smooth, soft and slightly tacky. It should spring back when pressed.</li>
-        <li><b>First rise.</b> Cover and rest in a warm spot 60–90 min, until doubled.</li>
-        <li><b>Divide &amp; shape.</b> Knock back, divide into 4 equal pieces (~102 g each). Ball them, cover, rest 10 min so the gluten relaxes.</li>
-        <li><b>Roll.</b> Roll or stretch each into a teardrop ~8 in long, ~1/4 in thick.</li>
-        <li><b>Cook hot.</b> Screaming-hot cast-iron skillet or tava, 2–3 min total — flip once big bubbles form and the underside is charred in spots.</li>
-        <li><b>Finish.</b> Brush with extra ghee straight off the heat. Keep wrapped in a towel until serving so they stay soft.</li>
-      </ol>
-    </div>
+  <aside class="ingredients">
+    <h3>Ingredients</h3>
+    <ul>
+      <li><span>All-Purpose Flour</span><span class="amt">240 g</span></li>
+      <li><span>Active Dry Yeast (Khamir)</span><span class="amt">3 g</span></li>
+      <li><span>Sugar</span><span class="amt">4 g</span></li>
+      <li><span>Warm Milk (or water)</span><span class="amt">120 g</span></li>
+      <li><span>Salt</span><span class="amt">4.5 g</span></li>
+      <li><span>Plain Yogurt</span><span class="amt">30 g</span></li>
+      <li><span>Ghee (or melted butter)</span><span class="amt">14 g</span></li>
+    </ul>
+    <p class="foot">Milk warm, not hot — ~105°F (40°C). Above 115°F (46°C) kills the yeast.</p>
+  </aside>
+
+  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes · 1 of 2</div>
+  <div class="pageno">Munshi Naan</div>
+</section>
+
+<!-- ===== SHEET 2 · method ===== -->
+<section class="page recipe" style="--accent:#0aa6a6; --accent-2:#6ee0d6; --accent-soft:#e2fbf8;">
+  <div class="holes"><i></i><i></i><i></i></div>
+  <div class="cont-strip"><h2>Munshi Naan</h2><span>continued…</span></div>
+
+  <div class="method two-col">
+    <h3>Method</h3>
+    <ol>
+      <li><b>Bloom the yeast.</b> Stir the yeast and sugar into the warm milk (120 g, ~105°F / 40°C). Stand 5–10 min until foamy. No foam means dead yeast — start over.</li>
+      <li><b>Mix.</b> Combine flour (240 g) and salt (4.5 g). Add the yogurt (30 g), ghee (14 g) and the yeast milk. Mix to a shaggy dough.</li>
+      <li><b>Knead.</b> 8–10 min by hand (or 5 min in a stand mixer on medium) until smooth, soft and slightly tacky. It should spring back when pressed.</li>
+      <li><b>First rise.</b> Cover and rest in a warm spot 60–90 min, until doubled.</li>
+      <li><b>Divide &amp; shape.</b> Knock back, divide into 4 equal pieces (~102 g each). Ball them, cover, rest 10 min so the gluten relaxes.</li>
+      <li><b>Roll.</b> Roll or stretch each into a teardrop ~8 in long, ~1/4 in thick.</li>
+      <li><b>Cook hot.</b> Screaming-hot cast-iron skillet or tava, 2–3 min total — flip once big bubbles form and the underside is charred in spots.</li>
+      <li><b>Finish.</b> Brush with extra ghee straight off the heat. Keep wrapped in a towel until serving so they stay soft.</li>
+    </ol>
   </div>
 
   <div class="note"><b>Yahya's note:</b> weigh everything. The yogurt is not optional — it is what makes the crumb tender. If the dough fights the roll, let it rest another 5 min; relaxed gluten rolls thin without tearing.</div>
 
-  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes</div>
+  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes · 2 of 2</div>
   <div class="pageno">Munshi Naan</div>
 </section>
+
 </body>
 </html>
