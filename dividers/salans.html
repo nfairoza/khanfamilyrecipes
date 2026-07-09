@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Salans — Divider</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Caveat:wght@500;700&display=swap');
+:root{ --ink:#241f1a; --soft:#7a7468; --paper:#ffffff; }
+*{box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
+  font-family:'Source Serif 4', Georgia, serif; font-size:10.5pt; line-height:1.5;}
+@page{ size:Letter; margin:0; }
+.page{position:relative; width:8.5in; height:11in; margin:0.25in auto; overflow:hidden;
+  background:var(--paper); box-shadow:0 2px 14px rgba(0,0,0,.12); page-break-after:always;}
+.page.bleed{ padding:0; }
+@media print{ body{background:#fff} .page{margin:0; box-shadow:none} }
+.divider{background:linear-gradient(150deg, var(--accent), var(--accent-2));
+  display:flex; align-items:center; justify-content:center;}
+.divider .card{background:#fff; border-radius:24px; padding:.7in .9in; text-align:center;
+  box-shadow:0 14px 40px rgba(0,0,0,.18); max-width:5.6in;}
+.divider .card .art{width:2in; height:2in; border-radius:50%; margin:0 auto;
+  overflow:hidden; border:6px solid var(--accent-soft);
+  display:flex; align-items:center; justify-content:center; font-size:1in;}
+.divider .card h2{font-family:'Fraunces',serif; font-weight:900; font-size:28pt; margin:.18in 0 .1in;}
+.divider .card hr{border:none; height:3px; width:1.4in; margin:.12in auto;
+  border-radius:2px; background:linear-gradient(90deg, var(--accent), var(--accent-2));}
+.divider .card p{color:var(--soft); font-style:italic; font-size:11.5pt; margin:0;}
+.tab{position:absolute; right:0; top:var(--tab-top, 3.0in);
+  background:#fff; color:var(--accent); font-weight:700; font-size:10pt;
+  font-family:'Fraunces',serif; letter-spacing:2px;
+  padding:.14in .18in .14in .22in; border-radius:14px 0 0 14px;
+  writing-mode:vertical-rl; text-orientation:mixed;
+  box-shadow:-3px 3px 10px rgba(0,0,0,.15);}
+.back{padding:1.1in 0.9in 0.9in 1.15in; background:linear-gradient(160deg, var(--accent-soft), #fff);}
+.back .eyebrow{font-family:'Fraunces',serif; font-weight:600; font-size:9pt; letter-spacing:3px;
+  text-transform:uppercase; color:var(--accent); margin-bottom:.08in;}
+.back h2{font-family:'Fraunces',serif; font-weight:900; font-size:26pt; margin:0 0 .06in;}
+.back .blurb{font-style:italic; color:var(--soft); font-size:11.5pt; margin:0 0 .3in;}
+.back .rule{height:0; border-top:2.5px solid var(--accent); width:1.6in; margin:0 0 .3in;}
+.toc{list-style:none; margin:0; padding:0;}
+.toc li{display:flex; justify-content:space-between; align-items:baseline; gap:.2in;
+  padding:.14in 0; border-bottom:1px dashed var(--accent-2);}
+.toc .name{font-family:'Fraunces',serif; font-weight:600; font-size:13pt;}
+.toc .who{font-family:'Caveat',cursive; font-size:14pt; color:var(--accent);}
+.holes{position:absolute; left:0.45in; top:0; bottom:0; width:0; z-index:9;}
+.holes i{position:absolute; left:-0.14in; width:0.28in; height:0.28in; border-radius:50%;
+  background:#efece7; box-shadow:inset 0 1px 3px rgba(0,0,0,.18);}
+.holes i:nth-child(1){top:1.15in} .holes i:nth-child(2){top:5.36in} .holes i:nth-child(3){top:9.57in}
+@media print{ .holes{display:none} }
+</style>
+</head>
+<body>
+<section class="page bleed divider" style="--accent:#ff5a4d; --accent-2:#ff8d7a; --accent-soft:#ffe4df;">
+  <div class="card">
+    <div class="art">🍲</div>
+    <h2>Salans</h2>
+    <hr>
+    <p>Gravies that make the rice make sense.</p>
+  </div>
+  <div class="tab" style="--tab-top:3.0in">SALANS</div>
+</section>
+<section class="page back" style="--accent:#ff5a4d; --accent-2:#ff8d7a; --accent-soft:#ffe4df;">
+  <div class="holes"><i></i><i></i><i></i></div>
+  <div class="eyebrow">In this section</div>
+  <h2>Salans</h2>
+  <p class="blurb">The gravies and curries — slow-built masalas that make a plate of rice make sense.</p>
+  <div class="rule"></div>
+  <ul class="toc">
+    <li><span class="name">Bhendi Ghosht</span><span class="who">Noor</span></li>
+  </ul>
+</section>
+</body>
+</html>

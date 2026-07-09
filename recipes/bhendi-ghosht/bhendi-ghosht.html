@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bhendi Ghosht — The Khan Family Cookbook</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Caveat:wght@500;700&display=swap');
+:root{ --ink:#241f1a; --soft:#7a7468; --paper:#ffffff; }
+*{box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
+  font-family:'Source Serif 4', Georgia, serif; font-size:10.5pt; line-height:1.5;}
+@page{ size:Letter; margin:0; }
+.page{position:relative; width:8.5in; height:11in; margin:0.25in auto; overflow:hidden;
+  background:var(--paper); padding:0.7in 0.7in 0.7in 1.15in; page-break-after:always;
+  box-shadow:0 2px 14px rgba(0,0,0,.12);}
+.holes{position:absolute; left:0.45in; top:0; bottom:0; width:0; z-index:9;}
+.holes i{position:absolute; left:-0.14in; width:0.28in; height:0.28in; border-radius:50%;
+  background:#efece7; box-shadow:inset 0 1px 3px rgba(0,0,0,.18);}
+.holes i:nth-child(1){top:1.15in} .holes i:nth-child(2){top:5.36in} .holes i:nth-child(3){top:9.57in}
+@media print{ .holes{display:none} body{background:#fff} .page{margin:0; box-shadow:none} }
+.opener{background:linear-gradient(160deg, var(--accent-soft), #fff);
+  display:flex; flex-direction:column; justify-content:center; align-items:flex-start;}
+.opener .kicker{font-family:'Fraunces',serif; font-weight:600; font-size:9pt; letter-spacing:3px;
+  text-transform:uppercase; color:var(--accent); margin-bottom:.1in;}
+.opener h1{font-family:'Fraunces',serif; font-weight:900; font-size:40pt; line-height:1.05; margin:0;}
+.opener h1 em{font-style:italic; font-weight:600; color:var(--accent);}
+.opener .rule{height:0; border-top:3px solid var(--accent); width:2in; margin:.2in 0;}
+.opener .memory{font-style:italic; font-size:12pt; line-height:1.65; max-width:5.4in; color:var(--ink);}
+.opener .memory b{color:var(--accent); font-style:italic;}
+.opener .attrib{font-family:'Caveat',cursive; font-size:18pt; color:var(--accent); margin-top:.3in;}
+.photopg h3{font-family:'Fraunces',serif; font-weight:600; font-size:10pt; letter-spacing:2px;
+  text-transform:uppercase; color:var(--accent); margin:0 0 .16in;}
+.frame{border:2.5px dashed var(--accent-2); border-radius:14px; background:var(--accent-soft);
+  display:flex; align-items:center; justify-content:center; color:var(--soft);
+  font-family:'Caveat',cursive; font-size:15pt; text-align:center; overflow:hidden;}
+.frame img{width:100%; height:100%; object-fit:cover;}
+.frame.main{height:4.6in; margin-bottom:.12in;}
+.cap{font-family:'Caveat',cursive; font-size:13pt; color:var(--soft); text-align:center; margin:0 0 .22in;}
+.frame.side{height:2.7in;}
+.side-row{display:grid; grid-template-columns:1fr 1fr; gap:.22in;}
+.side-row .cap{margin-top:.06in;}
+.chips{display:flex; gap:.08in; margin-bottom:.14in;}
+.chip{background:var(--accent); color:#fff; font-family:'Fraunces',serif; font-weight:600;
+  font-size:8pt; letter-spacing:1.5px; text-transform:uppercase; padding:.05in .14in; border-radius:999px;}
+.chip.ghost{background:var(--accent-soft); color:var(--accent);}
+.rhead h2{font-family:'Fraunces',serif; font-weight:900; font-size:24pt; margin:0; line-height:1.1;}
+.rhead h2 em{font-style:italic; font-weight:600; color:var(--accent);}
+.rhead .rule{height:0; border-top:2.5px solid var(--accent); border-bottom:1px solid var(--accent);
+  padding-top:2px; margin:.1in 0 .06in;}
+.rhead .attrib{font-family:'Caveat',cursive; font-size:15pt; color:var(--accent); margin:0 0 .02in;}
+.rhead .yield{font-size:8pt; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--accent); font-weight:600; margin:0 0 .16in;}
+.ingredients{background:var(--accent-soft); border-radius:14px; padding:.2in .24in; margin-bottom:.2in;}
+.ingredients h3{font-family:'Fraunces',serif; margin:0 0 .08in; font-size:10.5pt;
+  font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:2px;}
+.ing-cols{display:grid; grid-template-columns:1fr 1fr; gap:.06in .34in;}
+.ingredients ul{margin:0; padding-left:.18in;}
+.ingredients li{margin:.035in 0;}
+.ingredients .foot{margin-top:.08in; font-size:9pt; color:var(--soft); font-style:italic; line-height:1.4;}
+.method h3{font-family:'Fraunces',serif; margin:0 0 .1in; font-size:10.5pt;
+  font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:2px;}
+.method ol{margin:0; padding:0; list-style:none; counter-reset:step; column-count:2; column-gap:.34in;}
+.method li{counter-increment:step; position:relative; padding-left:.38in; margin:0 0 .1in; break-inside:avoid;}
+.method li::before{content:counter(step); position:absolute; left:0; top:.01in;
+  width:.28in; height:.28in; border-radius:50%; background:var(--accent); color:#fff;
+  font-family:'Fraunces',serif; font-weight:600; font-size:9.5pt;
+  display:flex; align-items:center; justify-content:center;}
+.note{border:2px solid var(--accent-2); border-radius:12px; background:#fff;
+  padding:.12in .2in; margin-top:.14in; font-size:10pt;}
+.note b{font-family:'Fraunces',serif; color:var(--accent);}
+.folio{position:absolute; left:1.15in; bottom:.42in; color:var(--soft); font-size:8.5pt;
+  font-style:italic; letter-spacing:.5px;}
+.pageno{position:absolute; right:.55in; bottom:.42in; color:var(--soft);
+  font-family:'Fraunces',serif; font-size:9pt;}
+</style>
+</head>
+<body>
+
+<!-- ===== PAGE 1 · title opener ===== -->
+<section class="page opener" style="--accent:#ff5a4d; --accent-2:#ff8d7a; --accent-soft:#ffe4df;">
+  <div class="holes"><i></i><i></i><i></i></div>
+  <div class="kicker">Salans · Mutton</div>
+  <h1>Bhendi <em>Ghosht</em></h1>
+  <div class="rule"></div>
+  <p class="memory"><b>Mutton and okra in a tangy, whole-spice gravy.</b> The meat is
+  pressure-cooked soft with tomatoes, tamarind and whole garam spices, then the bhendi
+  goes in at the end so it keeps its bite. Tangy, a little rich, and made for a big plate
+  of hot rice.</p>
+  <div class="attrib">from the kitchen of Noor</div>
+  <div class="folio">The Khan Family Cookbook · Salans</div>
+  <div class="pageno">Bhendi Ghosht</div>
+</section>
+
+<!-- ===== PAGE 2 · photo page (LEFT) ===== -->
+<section class="page photopg" style="--accent:#ff5a4d; --accent-2:#ff8d7a; --accent-soft:#ffe4df;">
+  <div class="holes"><i></i><i></i><i></i></div>
+  <h3>Bhendi Ghosht</h3>
+  <div class="frame main">main photo — the finished curry ✦</div>
+  <div class="cap">mutton and okra in tangy gravy</div>
+  <div class="side-row">
+    <div><div class="frame side">side photo ✦</div><div class="cap">onions &amp; whole spices</div></div>
+    <div><div class="frame side">side photo ✦</div><div class="cap">bhendi going in</div></div>
+  </div>
+  <div class="folio">The Khan Family Cookbook · Salans</div>
+  <div class="pageno">photos</div>
+</section>
+
+<!-- ===== PAGE 3 · the recipe (RIGHT) ===== -->
+<section class="page recipe" style="--accent:#ff5a4d; --accent-2:#ff8d7a; --accent-soft:#ffe4df;">
+  <div class="holes"><i></i><i></i><i></i></div>
+  <div class="chips"><span class="chip">Salans</span><span class="chip ghost">Mutton</span></div>
+  <div class="rhead">
+    <h2>Bhendi <em>Ghosht</em></h2>
+    <div class="rule"></div>
+    <p class="attrib">from the kitchen of Noor</p>
+    <p class="yield">A hearty pot for the family · pressure-cooked, then finished</p>
+  </div>
+
+  <aside class="ingredients">
+    <h3>What you'll need</h3>
+    <div class="ing-cols">
+      <div>
+        <ul>
+          <li>mutton (goat), cut into pieces</li>
+          <li>bhendi (okra / ladies finger), trimmed</li>
+          <li>onions, chopped</li>
+          <li>tomatoes, chopped</li>
+          <li>ginger-garlic paste, a good spoon</li>
+          <li>whole spices — cloves (long) &amp; cinnamon</li>
+          <li>oil, a generous pour</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>turmeric (haldi), a pinch</li>
+          <li>red chili powder (mirchi), to taste</li>
+          <li>coriander powder (dhania)</li>
+          <li>salt (namak), to taste</li>
+          <li>tamarind — paste, or concentrate in water</li>
+          <li>garam masala powder</li>
+          <li>curry leaves · coriander leaves · green chilies</li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot">Amounts by feel. Pressure-cook time depends on the meat: ~22 min for smallish pieces, ~35 min for larger ones.</p>
+  </aside>
+
+  <div class="method">
+    <h3>How we make it</h3>
+    <ol>
+      <li><b>Fry the onions.</b> Heat oil and fry the chopped onions until golden brown.</li>
+      <li><b>Whole spices.</b> Add the cloves and cinnamon, then the ginger-garlic paste; fry until the raw smell is gone.</li>
+      <li><b>Tomatoes.</b> Add the chopped tomatoes and fry until softened and pulpy.</li>
+      <li><b>Brown the mutton.</b> Add the mutton pieces and fry a little. Add turmeric, chili powder, salt, then coriander powder.</li>
+      <li><b>Add tamarind &amp; water.</b> Add a little water plus tamarind paste (or tamarind concentrate in water). Stir.</li>
+      <li><b>Pressure-cook.</b> Cook the meat until tender — ~22 min for small pieces, ~35 min for larger.</li>
+      <li><b>Add the bhendi.</b> Stir in the okra with a sprinkle of garam masala, curry leaves, coriander leaves and green chilies.</li>
+      <li><b>Finish.</b> Cook until the bhendi is tender (or pressure-cook 5–10 min more). Serve hot with rice.</li>
+    </ol>
+    <div class="note"><b>Amma's note:</b> add the bhendi only after the meat is cooked so it keeps its shape and doesn't go slimy. The tamarind is what makes it tangy — start small and adjust.</div>
+  </div>
+
+  <div class="folio">The Khan Family Cookbook · Salans</div>
+  <div class="pageno">Bhendi Ghosht</div>
+</section>
+
+<!-- ===== PAGE 4 · more photos ===== -->
+<section class="page photopg" style="--accent:#ff5a4d; --accent-2:#ff8d7a; --accent-soft:#ffe4df;">
+  <div class="holes"><i></i><i></i><i></i></div>
+  <h3>More from this dish</h3>
+  <div class="side-row">
+    <div><div class="frame side">side photo ✦</div><div class="cap">tomatoes frying down</div></div>
+    <div><div class="frame side">side photo ✦</div><div class="cap">mutton browning</div></div>
+  </div>
+  <div class="side-row">
+    <div><div class="frame side">side photo ✦</div><div class="cap">after the pressure cook</div></div>
+    <div><div class="frame side">side photo ✦</div><div class="cap">plated with rice</div></div>
+  </div>
+  <div class="folio">The Khan Family Cookbook · Salans</div>
+  <div class="pageno">photos</div>
+</section>
+
+</body>
+</html>

@@ -32,9 +32,6 @@ assign the next free hue from the palette, add a row here, and keep the file upd
 Free hues remaining in the family palette for new categories: sky blue `#3aa0ff`,
 sunflower variants. Stay inside the bright family — no muted/dusty tones.
 
-Note: Salans is defined above but currently has no recipes in the book (Palak
-Ulikaram moved to Chutneys). Keep the row for future curries; its divider is
-generated on demand when the first salan is added.
 
 ## Region/style tags
 
