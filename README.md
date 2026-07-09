@@ -34,6 +34,7 @@ The cookbook is organized into colored sections, each with its own divider tab. 
 | Recipe | Cook | View | Print |
 |--------|------|------|-------|
 | Jhinga Achari Fry | Noor | [HTML](recipes/jhinga-achari-fry/jhinga-achari-fry.html) | [PDF](recipes/jhinga-achari-fry/jhinga-achari-fry.pdf) |
+| Jhinga Palak | Noor | [HTML](recipes/jhinga-palak/jhinga-palak.html) | [PDF](recipes/jhinga-palak/jhinga-palak.pdf) |
 
 *(This list grows as recipes are added.)*
 
