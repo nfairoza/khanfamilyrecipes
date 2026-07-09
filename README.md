@@ -34,6 +34,7 @@ The cookbook is organized into colored sections, each with its own divider tab. 
 | Recipe | Cook | View | Print |
 |--------|------|------|-------|
 | Palak Ulikaram | Noor | [HTML](recipes/palak-ulikaram/palak-ulikaram.html) | [PDF](recipes/palak-ulikaram/palak-ulikaram.pdf) |
+| Kakdi Chutney | Noor | [HTML](recipes/kakdi-chutney/kakdi-chutney.html) | [PDF](recipes/kakdi-chutney/kakdi-chutney.pdf) |
 
 ### 🦐 Seafood
 [Section divider](dividers/seafood.pdf)
