@@ -43,6 +43,11 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
 .frame.side{height:2.7in;}
 .side-row{display:grid; grid-template-columns:1fr 1fr; gap:.22in;}
 .side-row .cap{margin-top:.06in;}
+.frame.wide{height:3.5in;}
+.notecard{background:linear-gradient(160deg, var(--accent-soft), #fff); border-radius:16px;
+  padding:.4in .5in;}
+.notecard .line{font-style:italic; font-size:12pt; line-height:1.7; color:var(--ink); margin:.05in 0;}
+.notecard .line b{color:var(--accent); font-style:normal;}
 
 /* ---- recipe page ---- */
 .chips{display:flex; gap:.08in; margin-bottom:.14in;}
@@ -111,7 +116,7 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
       <div class="cap">with rice &amp; a fried protein</div>
     </div>
     <div>
-      <div class="frame side">side photo ✦</div>
+      <div class="frame side"><img src="photos/20260708_101403.jpg" alt="the ground masala"></div>
       <div class="cap">the ground masala</div>
     </div>
   </div>
@@ -182,32 +187,19 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
   <div class="pageno">Palak Ulikaram</div>
 </section>
 
-<!-- ===== PAGE 4 · more photos / notes (back, fills the side) ===== -->
+<!-- ===== PAGE 4 · one more photo + notes ===== -->
 <section class="page photopg" style="--accent:#3fae5a; --accent-2:#8fd89e; --accent-soft:#e6f7ea;">
   <div class="holes"><i></i><i></i><i></i></div>
   <h3>More from this dish</h3>
-  <div class="side-row">
-    <div>
-      <div class="frame side">side photo ✦</div>
-      <div class="cap">roasting the chilies</div>
-    </div>
-    <div>
-      <div class="frame side">side photo ✦</div>
-      <div class="cap">the coarse paste</div>
-    </div>
-  </div>
-  <div class="side-row">
-    <div>
-      <div class="frame side">side photo ✦</div>
-      <div class="cap">oil separating</div>
-    </div>
-    <div>
-      <div class="frame side">side photo ✦</div>
-      <div class="cap">plated with rice</div>
-    </div>
+  <div class="frame wide"><img src="photos/20260708_102857.jpg" alt="spinach cooking down"></div>
+  <div class="cap">the spinach cooking down with the masala</div>
+  <div class="notecard" style="margin-top:.24in; padding:.3in .5in;">
+    <div class="line"><b>Serve with</b> hot white rice and a spoon of ghee, or with a fried protein.</div>
+    <div class="line"><b>The secret is patience</b> — keep cooking until the oil comes shining back to the top.</div>
+    <div class="line"><b>And really</b> — add more garlic than you think.</div>
   </div>
   <div class="folio">The Khan Family Cookbook · Chutneys</div>
-  <div class="pageno">photos</div>
+  <div class="pageno">notes</div>
 </section>
 
 </body>

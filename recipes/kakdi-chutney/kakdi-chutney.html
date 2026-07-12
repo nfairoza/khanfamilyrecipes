@@ -39,6 +39,13 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
 .frame.side{height:2.7in;}
 .side-row{display:grid; grid-template-columns:1fr 1fr; gap:.22in;}
 .side-row .cap{margin-top:.06in;}
+.frame.wide{height:3.5in;}
+.notecard{background:linear-gradient(160deg, var(--accent-soft), #fff); border-radius:16px;
+  padding:.4in .5in; height:100%; display:flex; flex-direction:column; justify-content:center;}
+.notecard h3{font-family:'Fraunces',serif; font-weight:900; font-size:22pt; color:var(--accent); margin:0 0 .1in;}
+.notecard .line{font-style:italic; font-size:12pt; line-height:1.7; color:var(--ink); margin:.05in 0;}
+.notecard .line b{color:var(--accent); font-style:normal;}
+.notecard .rule{height:0; border-top:2.5px solid var(--accent); width:1.6in; margin:.2in 0;}
 .chips{display:flex; gap:.08in; margin-bottom:.14in;}
 .chip{background:var(--accent); color:#fff; font-family:'Fraunces',serif; font-weight:600;
   font-size:8pt; letter-spacing:1.5px; text-transform:uppercase; padding:.05in .14in; border-radius:999px;}
@@ -157,20 +164,19 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
   <div class="pageno">Kakdi Chutney</div>
 </section>
 
-<!-- ===== PAGE 4 · more photos ===== -->
+<!-- ===== PAGE 4 · notes & pairings ===== -->
 <section class="page photopg" style="--accent:#3fae5a; --accent-2:#8fd89e; --accent-soft:#e6f7ea;">
   <div class="holes"><i></i><i></i><i></i></div>
-  <h3>More from this dish</h3>
-  <div class="side-row">
-    <div><div class="frame side">side photo ✦</div><div class="cap">peeled &amp; deseeded kakdi</div></div>
-    <div><div class="frame side">side photo ✦</div><div class="cap">cooking with tomato &amp; tamarind</div></div>
-  </div>
-  <div class="side-row">
-    <div><div class="frame side">side photo ✦</div><div class="cap">ground coarse with garlic</div></div>
-    <div><div class="frame side">side photo ✦</div><div class="cap">with rice and an omelet</div></div>
+  <div class="notecard">
+    <h3>Notes &amp; pairings</h3>
+    <div class="rule"></div>
+    <div class="line"><b>Serve with</b> hot white rice and a fried protein — or with rice and an omelet.</div>
+    <div class="line"><b>Pick the right kakdi</b> — slightly raw, half-green, firm to the touch. Never soft.</div>
+    <div class="line"><b>Don't skip the raw kakdi</b> stirred in at the end — that's the bright, tangy crunch.</div>
+    <div class="line"><b>Keep it coarse</b> — a few seconds in the grinder, not a smooth paste.</div>
   </div>
   <div class="folio">The Khan Family Cookbook · Chutneys</div>
-  <div class="pageno">photos</div>
+  <div class="pageno">notes</div>
 </section>
 
 </body>

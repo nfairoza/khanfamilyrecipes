@@ -88,21 +88,52 @@ accents. If a page starts looking calm, beige, or tasteful-neutral, it's wrong.
    - **Page 1 — title opener:** big Fraunces title, a memory/headnote line, the
      Caveat attribution, on a soft accent-gradient. Fills the back of the divider's
      facing side.
-   - **Page 2 — photo page (lands LEFT):** one big `.frame.main` (the finished
-     dish) + a `.side-row` of two `.frame.side` frames, each with a Caveat caption
-     line. Until real photos arrive, leave labeled dashed placeholders ("main
-     photo", "side photo") so Noor just drops images into `photos/` later.
+   - **Page 2 — photo page (lands LEFT):** the finished-dish photos, arranged to
+     FILL the page for the number of photos there actually are (see the dynamic
+     photo rule below).
    - **Page 3 — the recipe (lands RIGHT):** chips → title/rule/attribution/yield →
      ingredients box → method with colored step numbers (two columns) → note box.
      This must fit on ONE page — condense sensibly (two-column method/ingredients),
      since the presentation lives on pages 1–2.
-   - **Page 4 — more photos / notes:** a grid of `.frame.side` process shots with
-     captions (or overflow notes). Fills the last side.
-   Verify the render is exactly 4 pages and nothing clips (render to PNG, check the
-   lowest content row is above the bottom margin). The method NEVER shrinks type to
-   cram — if page 3 overflows, move overflow to page 4, don't shave margins.
-   For a recipe with a genuinely huge method, use 6 pages (opener, photo, recipe
-   sheet 1, recipe sheet 2, photo, notes) keeping the left/right facing rule.
+   - **Page 4 — more photos, OR a "notes & pairings" card:** if there are enough
+     good photos left over to fill it, a photo grid; otherwise a styled
+     notes/serving card (never a grid of empty frames).
+   The method NEVER shrinks type to cram — if page 3 overflows, move overflow to
+   page 4, don't shave margins.
+
+   **Dynamic photo layout — fit the layout to the photos, never the reverse.**
+   Noor sends anywhere from 0 to 10+ photos; the page count and arrangement adapt:
+   - **Curate first.** Use only the good, non-redundant shots — ten photos given
+     does NOT mean ten used. Always include exactly ONE main finished-dish photo;
+     everything else (process, plated, ingredients) is optional, chosen for variety.
+     Never place two near-identical shots.
+   - **NEVER render an empty / "your photo here" frame.** Placeholder frames are
+     forbidden in a recipe that has photos. A recipe with photos shows only real
+     photos, sized to fill.
+   - **Page count by curated photo count N** (keep it EVEN so no printed side is
+     blank):
+     - **N = 0** → **2 pages**: opener + recipe. No photo page at all (no empty
+       frames while waiting for photos).
+     - **N = 1–3** → **4 pages**: opener, photo page (fill variant for 1/2/3),
+       recipe, then a **"notes & pairings" card** as page 4 (not photos).
+     - **N = 4–6** → **4 pages**: opener, photo page (main + 2–3), recipe, second
+       photo page with the rest.
+     - **N = 7+** → **6 pages**: add a polaroid-collage page; keep the left/right
+       facing rule (photo pages on even pages).
+   - **Photo-page fill variants** (page must look full, no dead space): 1 photo =
+     one large framed photo centered; 2 = main large on top + one wide below (or two
+     equal halves); 3 = main large + a row of two; 4 = 2×2 grid; 5–6 = main + a
+     row of two + a row of two/three. Draft a short Caveat caption per photo.
+   - When Noor later drops photos into a recipe that had N=0, re-render it into the
+     4-page form. Adding/removing photos only re-renders THAT recipe.
+
+   **Frames (optional, casual):** a tasteful frame around photos is welcome — white
+   border/rounded, a soft shadow, or an occasional polaroid tilt — but it is NOT
+   required to be identical on every recipe. Vary it a little; don't force one frame
+   style everywhere. Keep it clean, never busy.
+
+   Verify each render: page count is even, nothing clips (render to PNG, check the
+   lowest content row is above the bottom margin), and there are zero empty frames.
 
    **Dividers are 2 pages** for the same reason: page 1 is the section card (with
    edge tab), page 2 is an "In this section" contents card (`.back` — eyebrow,

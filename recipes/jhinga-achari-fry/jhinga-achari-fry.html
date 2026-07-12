@@ -39,6 +39,10 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
 .frame.side{height:2.7in;}
 .side-row{display:grid; grid-template-columns:1fr 1fr; gap:.22in;}
 .side-row .cap{margin-top:.06in;}
+.frame.wide{height:3.5in;}
+.notecard{background:linear-gradient(160deg, var(--accent-soft), #fff); border-radius:16px; padding:.4in .5in;}
+.notecard .line{font-style:italic; font-size:12pt; line-height:1.7; color:var(--ink); margin:.05in 0;}
+.notecard .line b{color:var(--accent); font-style:normal;}
 .chips{display:flex; gap:.08in; margin-bottom:.14in;}
 .chip{background:var(--accent); color:#fff; font-family:'Fraunces',serif; font-weight:600;
   font-size:8pt; letter-spacing:1.5px; text-transform:uppercase; padding:.05in .14in; border-radius:999px;}
@@ -97,11 +101,11 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
 <section class="page photopg" style="--accent:#13c4c4; --accent-2:#6fe0e0; --accent-soft:#e0fafa;">
   <div class="holes"><i></i><i></i><i></i></div>
   <h3>Jhinga Achari Fry</h3>
-  <div class="frame main">main photo — the finished fry ✦</div>
-  <div class="cap">crisp at the edges, curry leaves and all</div>
+  <div class="frame main"><img src="photos/20260708_104527.jpg" alt="Jhinga Achari Fry, finished with coriander"></div>
+  <div class="cap">finished with a shower of coriander</div>
   <div class="side-row">
-    <div><div class="frame side">side photo ✦</div><div class="cap">prawns marinating</div></div>
-    <div><div class="frame side">side photo ✦</div><div class="cap">sizzling in the pan</div></div>
+    <div><div class="frame side"><img src="photos/20260708_104009.jpg" alt="prawns marinating in achari masala"></div><div class="cap">prawns in the achari masala</div></div>
+    <div><div class="frame side"><img src="photos/20260708_104425.jpg" alt="prawns frying in the pan"></div><div class="cap">frying in the pan</div></div>
   </div>
   <div class="folio">The Khan Family Cookbook · Seafood</div>
   <div class="pageno">photos</div>
@@ -165,20 +169,19 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
   <div class="pageno">Jhinga Achari Fry</div>
 </section>
 
-<!-- ===== PAGE 4 · more photos ===== -->
+<!-- ===== PAGE 4 · one more photo + notes ===== -->
 <section class="page photopg" style="--accent:#13c4c4; --accent-2:#6fe0e0; --accent-soft:#e0fafa;">
   <div class="holes"><i></i><i></i><i></i></div>
-  <h3>More from this dish</h3>
-  <div class="side-row">
-    <div><div class="frame side">side photo ✦</div><div class="cap">cleaned prawns</div></div>
-    <div><div class="frame side">side photo ✦</div><div class="cap">the achari masala</div></div>
-  </div>
-  <div class="side-row">
-    <div><div class="frame side">side photo ✦</div><div class="cap">curry leaves crackling</div></div>
-    <div><div class="frame side">side photo ✦</div><div class="cap">plated with rice</div></div>
+  <h3>At the table</h3>
+  <div class="frame wide"><img src="photos/20260708_105056.jpg" alt="served with rice and palak"></div>
+  <div class="cap">with rice, alongside a palak</div>
+  <div class="notecard" style="margin-top:.24in; padding:.3in .5in;">
+    <div class="line"><b>Serve with</b> rice and dal, or rice and a chutney.</div>
+    <div class="line"><b>Any pickle works</b> — the achar is what makes it "achari." Start with a small spoon.</div>
+    <div class="line"><b>Don't crowd the pan</b> and don't overcook — prawns are done the moment they curl and turn opaque.</div>
   </div>
   <div class="folio">The Khan Family Cookbook · Seafood</div>
-  <div class="pageno">photos</div>
+  <div class="pageno">notes</div>
 </section>
 
 </body>
