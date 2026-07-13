@@ -31,18 +31,16 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
   padding:.14in .18in .14in .22in; border-radius:14px 0 0 14px;
   writing-mode:vertical-rl; text-orientation:mixed;
   box-shadow:-3px 3px 10px rgba(0,0,0,.15);}
-/* ---- back of divider: section contents ---- */
-.back{padding:1.1in 0.9in 0.9in 1.15in; background:linear-gradient(160deg, var(--accent-soft), #fff);}
-.back .eyebrow{font-family:'Fraunces',serif; font-weight:600; font-size:9pt; letter-spacing:3px;
-  text-transform:uppercase; color:var(--accent); margin-bottom:.08in;}
-.back h2{font-family:'Fraunces',serif; font-weight:900; font-size:26pt; margin:0 0 .06in;}
-.back .blurb{font-style:italic; color:var(--soft); font-size:11.5pt; margin:0 0 .3in;}
-.back .rule{height:0; border-top:2.5px solid var(--accent); width:1.6in; margin:0 0 .3in;}
-.toc{list-style:none; margin:0; padding:0;}
-.toc li{display:flex; justify-content:space-between; align-items:baseline; gap:.2in;
-  padding:.14in 0; border-bottom:1px dashed var(--accent-2);}
-.toc .name{font-family:'Fraunces',serif; font-weight:600; font-size:13pt;}
-.toc .who{font-family:'Caveat',cursive; font-size:14pt; color:var(--accent);}
+/* ---- back of divider: evergreen decorative page (printed once) ---- */
+.back{background:linear-gradient(160deg, var(--accent-soft), #fff);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;}
+.back .big-emoji{font-size:150px; line-height:1; margin-bottom:.1in;
+  filter:drop-shadow(0 8px 14px rgba(0,0,0,.14));}
+.back h2{font-family:'Fraunces',serif; font-weight:900; font-size:34pt; color:var(--accent); margin:0;}
+.back .rule{height:4px; width:1.4in; border-radius:3px; margin:.22in 0;
+  background:linear-gradient(90deg, var(--accent), var(--accent-2));}
+.back .blurb{font-style:italic; color:var(--soft); font-size:15pt; line-height:1.5; max-width:5in; margin:0;}
+.dot{position:absolute; border-radius:50%; opacity:.85;}
 .holes{position:absolute; left:0.45in; top:0; bottom:0; width:0; z-index:9;}
 .holes i{position:absolute; left:-0.14in; width:0.28in; height:0.28in; border-radius:50%;
   background:#efece7; box-shadow:inset 0 1px 3px rgba(0,0,0,.18);}
@@ -61,17 +59,19 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
   </div>
   <div class="tab" style="--tab-top:1.4in">BREADS &amp; BAKES</div>
 </section>
-<!-- back: section contents -->
+<!-- back: evergreen decorative page -->
 <section class="page back" style="--accent:#0aa6a6; --accent-2:#6ee0d6; --accent-soft:#e2fbf8;">
   <div class="holes"><i></i><i></i><i></i></div>
-  <div class="eyebrow">In this section</div>
+  <span class="dot" style="left:1.1in;top:1.4in;width:.16in;height:.16in;background:var(--accent)"></span>
+  <span class="dot" style="left:6.9in;top:1.9in;width:.13in;height:.13in;background:var(--accent-2)"></span>
+  <span class="dot" style="left:1.5in;top:9.0in;width:.14in;height:.14in;background:var(--accent-2)"></span>
+  <span class="dot" style="left:6.6in;top:9.3in;width:.17in;height:.17in;background:var(--accent)"></span>
+  <span class="dot" style="left:.9in;top:5.4in;width:.11in;height:.11in;background:var(--accent-2)"></span>
+  <span class="dot" style="left:7.4in;top:5.7in;width:.12in;height:.12in;background:var(--accent)"></span>
+  <div class="big-emoji">🫓</div>
   <h2>Breads &amp; Bakes</h2>
-  <p class="blurb">Where precision pays off — scales, timers, and a thermometer that actually gets used.</p>
   <div class="rule"></div>
-  <ul class="toc">
-    <li><span class="name">Munshi Naan</span><span class="who">Yahya</span></li>
-    <li><span class="name">Everyday Loaf</span><span class="who">Yahya</span></li>
-  </ul>
+  <p class="blurb">Warm from the tawa or the oven.</p>
 </section>
 </body>
 </html>

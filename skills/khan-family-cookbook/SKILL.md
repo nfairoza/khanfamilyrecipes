@@ -136,10 +136,12 @@ accents. If a page starts looking calm, beige, or tasteful-neutral, it's wrong.
    lowest content row is above the bottom margin), and there are zero empty frames.
 
    **Dividers are 2 pages** for the same reason: page 1 is the section card (with
-   edge tab), page 2 is an "In this section" contents card (`.back` — eyebrow,
-   name, blurb, and a `.toc` list of the section's recipes with authors) so the
-   back is never blank. Regenerate a divider's page 2 when a recipe is added to
-   that section.
+   edge tab), page 2 is an **evergreen decorative back** (`.back` — a big section
+   emoji, the section name in the accent color, a gradient rule, the one-line
+   blurb, and scattered confetti dots). It deliberately does NOT list the section's
+   recipes — Noor prints each divider ONCE and never reprints it as recipes are
+   added. Do not put a table of contents or anything recipe-count-dependent on a
+   divider back.
 
    If the recipe opens a **new category**, also generate that category's divider
    (both pages): `dividers/<category>.html` + `.pdf`, and record the color in
