@@ -28,6 +28,23 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
 .opener .memory{font-style:italic; font-size:12pt; line-height:1.65; max-width:5.4in; color:var(--ink);}
 .opener .memory b{color:var(--accent); font-style:italic;}
 .opener .attrib{font-family:'Caveat',cursive; font-size:18pt; color:var(--accent); margin-top:.3in;}
+.photopg h3{font-family:'Fraunces',serif; font-weight:600; font-size:10pt; letter-spacing:2px;
+  text-transform:uppercase; color:var(--accent); margin:0 0 .16in;}
+.frame{border:2.5px dashed var(--accent-2); border-radius:14px; background:var(--accent-soft);
+  display:flex; align-items:center; justify-content:center; color:var(--soft);
+  font-family:'Caveat',cursive; font-size:15pt; text-align:center; overflow:hidden;}
+.frame img{width:100%; height:100%; object-fit:cover;}
+.frame.main{height:4.6in; margin-bottom:.12in;}
+.frame.side{height:2.7in;}
+.frame.wide{height:3.5in;}
+.side-row{display:grid; grid-template-columns:1fr 1fr; gap:.22in;}
+.cap{font-family:'Caveat',cursive; font-size:13pt; color:var(--soft); text-align:center; margin:0 0 .22in;}
+.side-row .cap{margin-top:.06in;}
+.notecard{background:linear-gradient(160deg, var(--accent-soft), #fff); border-radius:16px; padding:.4in .5in;}
+.notecard h3{font-family:'Fraunces',serif; font-weight:900; font-size:22pt; color:var(--accent); margin:0 0 .1in;}
+.notecard .nrule{height:0; border-top:2.5px solid var(--accent); width:1.6in; margin:.2in 0;}
+.notecard .line{font-style:italic; font-size:12pt; line-height:1.7; color:var(--ink); margin:.05in 0;}
+.notecard .line b{color:var(--accent); font-style:normal;}
 .chips{display:flex; gap:.08in; margin-bottom:.14in;}
 .chip{background:var(--accent); color:#fff; font-family:'Fraunces',serif; font-weight:600;
   font-size:8pt; letter-spacing:1.5px; text-transform:uppercase; padding:.05in .14in; border-radius:999px;}
@@ -82,7 +99,21 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
   <div class="pageno">Aloo Ghosht White Curry</div>
 </section>
 
-<!-- ===== PAGE 2 · the recipe ===== -->
+<!-- ===== PAGE 2 · photo page (LEFT) ===== -->
+<section class="page photopg" style="--accent:#ff5a4d; --accent-2:#ff8d7a; --accent-soft:#ffe4df;">
+  <div class="holes"><i></i><i></i><i></i></div>
+  <h3>Aloo Ghosht White Curry</h3>
+  <div class="frame main"><img src="photos/20260716_200620.jpg" alt="Aloo Ghosht White Curry, finished"></div>
+  <div class="cap">soft potatoes, mutton, and all the pepper</div>
+  <div class="side-row">
+    <div><div class="frame side"><img src="photos/20260716_180042.jpg" alt="onions sweating with whole spices"></div><div class="cap">onions with bay &amp; whole spices</div></div>
+    <div><div class="frame side"><img src="photos/20260716_180432.jpg" alt="mutton added"></div><div class="cap">the mutton goes in</div></div>
+  </div>
+  <div class="folio">The Khan Family Cookbook · Salans</div>
+  <div class="pageno">photos</div>
+</section>
+
+<!-- ===== PAGE 3 · the recipe (RIGHT) ===== -->
 <section class="page recipe" style="--accent:#ff5a4d; --accent-2:#ff8d7a; --accent-soft:#ffe4df;">
   <div class="holes"><i></i><i></i><i></i></div>
   <div class="chips"><span class="chip">Salans</span><span class="chip ghost">White Curry</span></div>
@@ -141,6 +172,22 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
 
   <div class="folio">The Khan Family Cookbook · Salans</div>
   <div class="pageno">Aloo Ghosht White Curry</div>
+</section>
+
+<!-- ===== PAGE 4 · one more photo + notes ===== -->
+<section class="page photopg" style="--accent:#ff5a4d; --accent-2:#ff8d7a; --accent-soft:#ffe4df;">
+  <div class="holes"><i></i><i></i><i></i></div>
+  <h3>The coarse spice mix</h3>
+  <div class="frame wide"><img src="photos/20260716_180025.jpg" alt="crushing the coarse spice mix"></div>
+  <div class="cap">dhania, jeera, black pepper &amp; kasuri methi, crushed coarse</div>
+  <div class="notecard" style="margin-top:.24in; padding:.3in .5in;">
+    <div class="line"><b>Serve with</b> naan or roti to soak up the juices, or with rice.</div>
+    <div class="line"><b>No turmeric, no red chili</b> — the character is green chili, black pepper and whole spice.</div>
+    <div class="line"><b>The spice mix goes in twice</b> — half while cooking, half at the end for fragrance.</div>
+    <div class="line"><b>For roti</b>, cook it down a little drier; for naan, keep it saucy.</div>
+  </div>
+  <div class="folio">The Khan Family Cookbook · Salans</div>
+  <div class="pageno">notes</div>
 </section>
 
 </body>
