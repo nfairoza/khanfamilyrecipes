@@ -45,6 +45,13 @@ The cookbook is organized into colored sections, each with its own divider tab. 
 | Jhinga Achari Fry | Noor | [HTML](recipes/jhinga-achari-fry/jhinga-achari-fry.html) | [PDF](recipes/jhinga-achari-fry/jhinga-achari-fry.pdf) |
 | Jhinga Palak | Noor | [HTML](recipes/jhinga-palak/jhinga-palak.html) | [PDF](recipes/jhinga-palak/jhinga-palak.pdf) |
 
+### 🥔 Vegetables
+[Section divider](dividers/vegetables.pdf)
+
+| Recipe | Cook | View | Print |
+|--------|------|------|-------|
+| Aloo Fry | Noor | [HTML](recipes/aloo-fry/aloo-fry.html) | [PDF](recipes/aloo-fry/aloo-fry.pdf) |
+
 *(This list grows as recipes are added.)*
 
 ## How it's made

@@ -28,8 +28,9 @@ assign the next free hue from the palette, add a row here, and keep the file upd
 | Sweets | kheer, halwa, dessert, mithai, cake (dessert), pudding | `#c86bff` | `#e3a7ff` | `#f5e6ff` | 🍮 | Always room. |
 | Chutneys | chutney, ulikaram, pachadi, thogayal, podi, relish | `#3fae5a` | `#8fd89e` | `#e6f7ea` | 🌶️ | The little jars that carry the meal. |
 | Seafood | prawn, shrimp, jhinga, fish, crab, chingri | `#13c4c4` | `#6fe0e0` | `#e0fafa` | 🦐 | From the coast, cooked with care. |
+| Vegetables | aloo/potato fry, bhindi/okra fry, dry sabzi, veg side, stir-fry | `#3aa0ff` | `#8fc9ff` | `#e4f1ff` | 🥔 | Simple sides that make the plate. |
 
-Free hues remaining in the family palette for new categories: sky blue `#3aa0ff`,
+Free hues remaining in the family palette for new categories:
 sunflower variants. Stay inside the bright family — no muted/dusty tones.
 
 

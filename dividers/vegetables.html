@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vegetables — Divider</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Caveat:wght@500;700&display=swap');
+:root{ --ink:#241f1a; --soft:#7a7468; --paper:#ffffff; }
+*{box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
+  font-family:'Source Serif 4', Georgia, serif; font-size:10.5pt; line-height:1.5;}
+@page{ size:Letter; margin:0; }
+.page{position:relative; width:8.5in; height:11in; margin:0.25in auto; overflow:hidden;
+  background:var(--paper); box-shadow:0 2px 14px rgba(0,0,0,.12); page-break-after:always;}
+.page.bleed{ padding:0; }
+@media print{ body{background:#fff} .page{margin:0; box-shadow:none} }
+.divider{background:linear-gradient(150deg, var(--accent), var(--accent-2));
+  display:flex; align-items:center; justify-content:center;}
+.divider .card{background:#fff; border-radius:24px; padding:.7in .9in; text-align:center;
+  box-shadow:0 14px 40px rgba(0,0,0,.18); max-width:5.6in;}
+.divider .card .art{width:2in; height:2in; border-radius:50%; margin:0 auto;
+  overflow:hidden; border:6px solid var(--accent-soft);
+  display:flex; align-items:center; justify-content:center; font-size:1in;}
+.divider .card h2{font-family:'Fraunces',serif; font-weight:900; font-size:28pt; margin:.18in 0 .1in;}
+.divider .card hr{border:none; height:3px; width:1.4in; margin:.12in auto;
+  border-radius:2px; background:linear-gradient(90deg, var(--accent), var(--accent-2));}
+.divider .card p{color:var(--soft); font-style:italic; font-size:11.5pt; margin:0;}
+.tab{position:absolute; right:0; top:var(--tab-top, 7.8in);
+  background:#fff; color:var(--accent); font-weight:700; font-size:10pt;
+  font-family:'Fraunces',serif; letter-spacing:2px;
+  padding:.14in .18in .14in .22in; border-radius:14px 0 0 14px;
+  writing-mode:vertical-rl; text-orientation:mixed;
+  box-shadow:-3px 3px 10px rgba(0,0,0,.15);}
+.back{background:linear-gradient(160deg, var(--accent-soft), #fff);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;}
+.back .big-emoji{font-size:150px; line-height:1; margin-bottom:.1in;
+  filter:drop-shadow(0 8px 14px rgba(0,0,0,.14));}
+.back h2{font-family:'Fraunces',serif; font-weight:900; font-size:34pt; color:var(--accent); margin:0;}
+.back .rule{height:4px; width:1.4in; border-radius:3px; margin:.22in 0;
+  background:linear-gradient(90deg, var(--accent), var(--accent-2));}
+.back .blurb{font-style:italic; color:var(--soft); font-size:15pt; line-height:1.5; max-width:5in; margin:0;}
+.dot{position:absolute; border-radius:50%; opacity:.85;}
+.holes{position:absolute; left:0.45in; top:0; bottom:0; width:0; z-index:9;}
+.holes i{position:absolute; left:-0.14in; width:0.28in; height:0.28in; border-radius:50%;
+  background:#efece7; box-shadow:inset 0 1px 3px rgba(0,0,0,.18);}
+.holes i:nth-child(1){top:1.15in} .holes i:nth-child(2){top:5.36in} .holes i:nth-child(3){top:9.57in}
+@media print{ .holes{display:none} }
+</style>
+</head>
+<body>
+<section class="page bleed divider" style="--accent:#3aa0ff; --accent-2:#8fc9ff; --accent-soft:#e4f1ff;">
+  <div class="card">
+    <div class="art">🥔</div>
+    <h2>Vegetables</h2>
+    <hr>
+    <p>Simple sides that make the plate.</p>
+  </div>
+  <div class="tab" style="--tab-top:7.8in">VEGETABLES</div>
+</section>
+<section class="page back" style="--accent:#3aa0ff; --accent-2:#8fc9ff; --accent-soft:#e4f1ff;">
+  <div class="holes"><i></i><i></i><i></i></div>
+  <span class="dot" style="left:1.1in;top:1.4in;width:.16in;height:.16in;background:var(--accent)"></span>
+  <span class="dot" style="left:6.9in;top:1.9in;width:.13in;height:.13in;background:var(--accent-2)"></span>
+  <span class="dot" style="left:1.5in;top:9.0in;width:.14in;height:.14in;background:var(--accent-2)"></span>
+  <span class="dot" style="left:6.6in;top:9.3in;width:.17in;height:.17in;background:var(--accent)"></span>
+  <span class="dot" style="left:.9in;top:5.4in;width:.11in;height:.11in;background:var(--accent-2)"></span>
+  <span class="dot" style="left:7.4in;top:5.7in;width:.12in;height:.12in;background:var(--accent)"></span>
+  <div class="big-emoji">🥔</div>
+  <h2>Vegetables</h2>
+  <div class="rule"></div>
+  <p class="blurb">Simple sides that make the plate.</p>
+</section>
+</body>
+</html>
