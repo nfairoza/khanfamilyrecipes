@@ -27,6 +27,7 @@ The cookbook is organized into colored sections, each with its own divider tab. 
 | Recipe | Cook | View | Print |
 |--------|------|------|-------|
 | Bhendi Ghosht | Noor | [HTML](recipes/bhendi-ghosht/bhendi-ghosht.html) | [PDF](recipes/bhendi-ghosht/bhendi-ghosht.pdf) |
+| Aloo Ghosht White Curry | Noor | [HTML](recipes/aloo-ghosht-white-curry/aloo-ghosht-white-curry.html) | [PDF](recipes/aloo-ghosht-white-curry/aloo-ghosht-white-curry.pdf) |
 
 ### 🌶️ Chutneys
 [Section divider](dividers/chutneys.pdf)
