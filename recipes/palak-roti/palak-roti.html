@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Palak Roti — The Khan Family Cookbook</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Caveat:wght@500;700&display=swap');
+:root{ --ink:#241f1a; --soft:#7a7468; --paper:#ffffff; }
+*{box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
+  font-family:'Source Serif 4', Georgia, serif; font-size:10.5pt; line-height:1.5;}
+@page{ size:Letter; margin:0; }
+.page{position:relative; width:8.5in; height:11in; margin:0.25in auto; overflow:hidden;
+  background:var(--paper); padding:0.7in 0.7in 0.7in 1.15in; page-break-after:always;
+  box-shadow:0 2px 14px rgba(0,0,0,.12);}
+.holes{position:absolute; left:0.45in; top:0; bottom:0; width:0; z-index:9;}
+.holes i{position:absolute; left:-0.14in; width:0.28in; height:0.28in; border-radius:50%;
+  background:#efece7; box-shadow:inset 0 1px 3px rgba(0,0,0,.18);}
+.holes i:nth-child(1){top:1.15in} .holes i:nth-child(2){top:5.36in} .holes i:nth-child(3){top:9.57in}
+@media print{ .holes{display:none} body{background:#fff} .page{margin:0; box-shadow:none} }
+.opener{background:linear-gradient(160deg, var(--accent-soft), #fff);
+  display:flex; flex-direction:column; justify-content:center; align-items:flex-start;}
+.opener .kicker{font-family:'Fraunces',serif; font-weight:600; font-size:9pt; letter-spacing:3px;
+  text-transform:uppercase; color:var(--accent); margin-bottom:.1in;}
+.opener h1{font-family:'Fraunces',serif; font-weight:900; font-size:40pt; line-height:1.05; margin:0;}
+.opener h1 em{font-style:italic; font-weight:600; color:var(--accent);}
+.opener .rule{height:0; border-top:3px solid var(--accent); width:2in; margin:.2in 0;}
+.opener .memory{font-style:italic; font-size:12pt; line-height:1.65; max-width:5.4in; color:var(--ink);}
+.opener .memory b{color:var(--accent); font-style:italic;}
+.opener .attrib{font-family:'Caveat',cursive; font-size:18pt; color:var(--accent); margin-top:.3in;}
+.chips{display:flex; gap:.08in; margin-bottom:.14in;}
+.chip{background:var(--accent); color:#fff; font-family:'Fraunces',serif; font-weight:600;
+  font-size:8pt; letter-spacing:1.5px; text-transform:uppercase; padding:.05in .14in; border-radius:999px;}
+.chip.ghost{background:var(--accent-soft); color:var(--accent);}
+.rhead h2{font-family:'Fraunces',serif; font-weight:900; font-size:26pt; margin:0; line-height:1.1;}
+.rhead h2 em{font-style:italic; font-weight:600; color:var(--accent);}
+.rhead .rule{height:0; border-top:2.5px solid var(--accent); border-bottom:1px solid var(--accent);
+  padding-top:2px; margin:.1in 0 .06in;}
+.rhead .attrib{font-family:'Caveat',cursive; font-size:15pt; color:var(--accent); margin:0 0 .02in;}
+.rhead .yield{font-size:8pt; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--accent); font-weight:600; margin:0 0 .16in;}
+.ingredients{background:var(--accent-soft); border-radius:14px; padding:.2in .24in; margin-bottom:.2in;}
+.ingredients h3{font-family:'Fraunces',serif; margin:0 0 .08in; font-size:10.5pt;
+  font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:2px;}
+.ingredients h4{font-family:'Fraunces',serif; margin:.04in 0 .04in; font-size:8.5pt;
+  font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:1.5px;}
+.ing-cols{display:grid; grid-template-columns:1fr 1fr; gap:.06in .34in;}
+.ingredients ul{margin:0; padding-left:.18in;}
+.ingredients li{margin:.04in 0;}
+.ingredients .foot{margin-top:.08in; font-size:9pt; color:var(--soft); font-style:italic; line-height:1.4;}
+.method h3{font-family:'Fraunces',serif; margin:0 0 .1in; font-size:10.5pt;
+  font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:2px;}
+.method ol{margin:0; padding:0; list-style:none; counter-reset:step; column-count:2; column-gap:.34in;}
+.method li{counter-increment:step; position:relative; padding-left:.38in; margin:0 0 .1in; break-inside:avoid;}
+.method li::before{content:counter(step); position:absolute; left:0; top:.01in;
+  width:.28in; height:.28in; border-radius:50%; background:var(--accent); color:#fff;
+  font-family:'Fraunces',serif; font-weight:600; font-size:9.5pt;
+  display:flex; align-items:center; justify-content:center;}
+.note{border:2px solid var(--accent-2); border-radius:12px; background:#fff;
+  padding:.12in .2in; margin-top:.14in; font-size:10pt;}
+.note b{font-family:'Fraunces',serif; color:var(--accent);}
+.folio{position:absolute; left:1.15in; bottom:.42in; color:var(--soft); font-size:8.5pt;
+  font-style:italic; letter-spacing:.5px;}
+.pageno{position:absolute; right:.55in; bottom:.42in; color:var(--soft);
+  font-family:'Fraunces',serif; font-size:9pt;}
+</style>
+</head>
+<body>
+
+<!-- ===== PAGE 1 · title opener ===== -->
+<section class="page opener" style="--accent:#0aa6a6; --accent-2:#6ee0d6; --accent-soft:#e2fbf8;">
+  <div class="holes"><i></i><i></i><i></i></div>
+  <div class="kicker">Breads &amp; Bakes · Spinach</div>
+  <h1>Palak <em>Roti</em></h1>
+  <div class="rule"></div>
+  <p class="memory"><b>A soft, green, iron-rich roti kneaded with a garlicky spinach
+  paste.</b> Wholesome and just a little spicy from green chili, and it freezes
+  beautifully — we press a whole week's worth at once. Eat it with any curry and ghee,
+  or roll it into a wrap.</p>
+  <div class="attrib">from the kitchen of Noor</div>
+  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes</div>
+  <div class="pageno">Palak Roti</div>
+</section>
+
+<!-- ===== PAGE 2 · the recipe ===== -->
+<section class="page recipe" style="--accent:#0aa6a6; --accent-2:#6ee0d6; --accent-soft:#e2fbf8;">
+  <div class="holes"><i></i><i></i><i></i></div>
+  <div class="chips"><span class="chip">Breads &amp; Bakes</span><span class="chip ghost">Spinach</span></div>
+  <div class="rhead">
+    <h2>Palak <em>Roti</em></h2>
+    <div class="rule"></div>
+    <p class="attrib">from the kitchen of Noor</p>
+    <p class="yield">A big batch · press a week's worth &amp; freeze</p>
+  </div>
+
+  <aside class="ingredients">
+    <h3>What you'll need</h3>
+    <div class="ing-cols">
+      <div>
+        <h4>For the dough</h4>
+        <ul>
+          <li>atta (wheat flour), about 1 kg</li>
+          <li>the palak paste (below), ~750 g</li>
+          <li>extra atta / water, as needed to knead</li>
+        </ul>
+      </div>
+      <div>
+        <h4>For the palak paste</h4>
+        <ul>
+          <li>2 big bunches spinach (palak), washed &amp; cut</li>
+          <li>10–15 cloves garlic</li>
+          <li>a bunch of green chilies</li>
+          <li>a good bit of cumin (jeera)</li>
+          <li>salt — don't forget it</li>
+          <li>a little water, to help it grind</li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot">Amounts are by feel — scale the flour and paste together (roughly 750 g paste to 1 kg atta).</p>
+  </aside>
+
+  <div class="method">
+    <h3>How we make it</h3>
+    <ol>
+      <li><b>Make the paste.</b> Blend the spinach, garlic, green chilies, cumin and salt with just a little water into a fine paste.</li>
+      <li><b>Bring the dough together.</b> Put the atta (~1 kg) in a big bowl and add about 750 g of the paste. Mix.</li>
+      <li><b>Knead.</b> Knead well (<i>gundo</i>) into a smooth dough ball, adding a little more atta or water as needed for your flour.</li>
+      <li><b>Portion.</b> Divide into ~50 g balls.</li>
+      <li><b>Press.</b> Press each ball between two parchment sheets (we use a tortilla press) into a roti. Repeat for the batch.</li>
+      <li><b>Freeze the extras.</b> Stack with parchment between and freeze — a whole week's worth keeps beautifully.</li>
+      <li><b>Cook.</b> Cook fresh or from frozen on a hot tava until cooked through with a few charred spots.</li>
+      <li><b>Serve.</b> With curry and ghee, or roll it into a wrap.</li>
+    </ol>
+    <div class="note"><b>Amma's note:</b> we made ours a wrap with fried chicken, raita and fried green beans — delicious. Full of iron and fiber, a little spicy, and healthy either way you eat it.</div>
+  </div>
+
+  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes</div>
+  <div class="pageno">Palak Roti</div>
+</section>
+
+</body>
+</html>
