@@ -28,6 +28,30 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
 .opener .memory{font-style:italic; font-size:12pt; line-height:1.65; max-width:5.4in; color:var(--ink);}
 .opener .memory b{color:var(--accent); font-style:italic;}
 .opener .attrib{font-family:'Caveat',cursive; font-size:18pt; color:var(--accent); margin-top:.3in;}
+.photopg h3{font-family:'Fraunces',serif; font-weight:600; font-size:10pt; letter-spacing:2px;
+  text-transform:uppercase; color:var(--accent); margin:0 0 .16in;}
+.frame{border:2.5px dashed var(--accent-2); border-radius:14px; background:var(--accent-soft);
+  display:flex; align-items:center; justify-content:center; color:var(--soft);
+  font-family:'Caveat',cursive; font-size:15pt; text-align:center; overflow:hidden;}
+.frame img{width:100%; height:100%; object-fit:cover;}
+.frame.main{height:4.6in; margin-bottom:.12in;}
+.frame.side{height:2.7in;}
+.frame.wide{height:3.5in;}
+.side-row{display:grid; grid-template-columns:1fr 1fr; gap:.22in;}
+.cap{font-family:'Caveat',cursive; font-size:13pt; color:var(--soft); text-align:center; margin:0 0 .22in;}
+.side-row .cap{margin-top:.06in;}
+.notecard{background:linear-gradient(160deg, var(--accent-soft), #fff); border-radius:16px; padding:.4in .5in;}
+.notecard .line{font-style:italic; font-size:12pt; line-height:1.7; color:var(--ink); margin:.05in 0;}
+.notecard .line b{color:var(--accent); font-style:normal;}
+/* ---- polaroid collage motif ---- */
+.pboard{position:relative; height:8.7in;}
+.pol{position:absolute; background:#fff; padding:.12in .12in .1in; box-shadow:0 8px 20px rgba(0,0,0,.2);}
+.pol img{display:block; width:100%; object-fit:cover;}
+.pol .cap{font-family:'Caveat',cursive; font-size:13pt; text-align:center; color:var(--ink);
+  margin-top:.07in; line-height:1.1;}
+.pol .tape{position:absolute; top:-.12in; left:50%; transform:translateX(-50%) rotate(-4deg);
+  width:1.1in; height:.28in; background:var(--accent-2); opacity:.72; border-radius:2px;
+  box-shadow:0 1px 2px rgba(0,0,0,.12);}
 .chips{display:flex; gap:.08in; margin-bottom:.14in;}
 .chip{background:var(--accent); color:#fff; font-family:'Fraunces',serif; font-weight:600;
   font-size:8pt; letter-spacing:1.5px; text-transform:uppercase; padding:.05in .14in; border-radius:999px;}
@@ -82,7 +106,42 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
   <div class="pageno">Palak Roti</div>
 </section>
 
-<!-- ===== PAGE 2 · the recipe ===== -->
+<!-- ===== PAGE 2 · polaroid collage (LEFT) ===== -->
+<section class="page photopg" style="--accent:#0aa6a6; --accent-2:#6ee0d6; --accent-soft:#e2fbf8;">
+  <div class="holes"><i></i><i></i><i></i></div>
+  <h3>Palak Roti day</h3>
+  <div class="pboard">
+    <figure class="pol" style="width:2.5in; left:0in; top:0.1in; transform:rotate(-5deg)">
+      <span class="tape"></span>
+      <img src="photos/20260719_121959.jpg" alt="kneading the green dough" style="height:2.5in">
+      <figcaption class="cap">the greenest dough</figcaption>
+    </figure>
+    <figure class="pol" style="width:2.3in; right:0.1in; top:0in; transform:rotate(4deg)">
+      <span class="tape" style="background:var(--accent)"></span>
+      <img src="photos/20260719_132714.jpg" alt="pressed raw roti" style="height:2.4in">
+      <figcaption class="cap">pressed &amp; ready</figcaption>
+    </figure>
+    <figure class="pol" style="width:3.3in; left:1.5in; top:2.65in; transform:rotate(2deg); z-index:2">
+      <span class="tape" style="background:var(--accent-2)"></span>
+      <img src="photos/20260719_165132.jpg" alt="cooked palak roti" style="height:3.2in">
+      <figcaption class="cap">off the tava, charred just right</figcaption>
+    </figure>
+    <figure class="pol" style="width:2.4in; left:0.05in; top:4.5in; transform:rotate(-4deg)">
+      <span class="tape" style="background:var(--accent)"></span>
+      <img src="photos/20260719_165147.jpg" alt="two rotis close up" style="height:2.5in">
+      <figcaption class="cap">soft &amp; speckled</figcaption>
+    </figure>
+    <figure class="pol" style="width:2.7in; right:0.05in; top:5.55in; transform:rotate(5deg); z-index:3">
+      <span class="tape" style="background:var(--accent-2)"></span>
+      <img src="photos/20260719_171416.jpg" alt="palak roti wrap with fried chicken" style="height:2.9in">
+      <figcaption class="cap">as a wrap — chicken &amp; raita</figcaption>
+    </figure>
+  </div>
+  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes</div>
+  <div class="pageno">photos</div>
+</section>
+
+<!-- ===== PAGE 3 · the recipe (RIGHT) ===== -->
 <section class="page recipe" style="--accent:#0aa6a6; --accent-2:#6ee0d6; --accent-soft:#e2fbf8;">
   <div class="holes"><i></i><i></i><i></i></div>
   <div class="chips"><span class="chip">Breads &amp; Bakes</span><span class="chip ghost">Spinach</span></div>
@@ -136,6 +195,19 @@ html,body{margin:0; padding:0; background:#efece7; color:var(--ink);
 
   <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes</div>
   <div class="pageno">Palak Roti</div>
+</section>
+
+<!-- ===== PAGE 4 · notes & pairings ===== -->
+<section class="page photopg" style="--accent:#0aa6a6; --accent-2:#6ee0d6; --accent-soft:#e2fbf8;">
+  <div class="holes"><i></i><i></i><i></i></div>
+  <div class="notecard" style="margin-top:3in;">
+    <div class="line"><b>Eat it two ways</b> — as a roti with any curry and ghee, or rolled into a wrap.</div>
+    <div class="line"><b>Our favourite wrap</b> — fried chicken, raita and fried green beans.</div>
+    <div class="line"><b>Make a big batch</b> — press ~50 g balls between parchment and freeze a whole week's worth.</div>
+    <div class="line"><b>Full of iron &amp; fiber</b>, a little spicy, and healthy either way you eat it.</div>
+  </div>
+  <div class="folio">The Khan Family Cookbook · Breads &amp; Bakes</div>
+  <div class="pageno">notes</div>
 </section>
 
 </body>
